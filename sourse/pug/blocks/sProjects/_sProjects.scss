@@ -98,8 +98,9 @@
 
 	}
 	&__img{
-		width: rem(310);
 
+		width: rem(310);
+		max-width: 100%;
 		@include media-breakpoint-up(md){
 			margin-right: rem(30);
 		}

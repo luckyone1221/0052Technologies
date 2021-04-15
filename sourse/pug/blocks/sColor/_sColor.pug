@@ -8,7 +8,7 @@ mixin sColor(data)
 		.container
 			+e.descr.text-center РусТехнолоджи предоставляет услуги полного цикла по разработке, внедрению и сопровождению IT-решений. Мы разрабатываем функциональные веб-сайты, мобильные приложения, проектируем правильные интерфейсы, реализуем и автоматизируем сложные бизнес-процессы, и делаем это все красиво.
 			+e.row.row
-				+e.col--primary.col-md-6
+				+e.col--primary.col-md-6.slideInLeft.wow(data-wow-duration='.4s' data-wow-delay='.3s')
 					+e.H2.title
 						| Бизнес
 						br
@@ -17,7 +17,7 @@ mixin sColor(data)
 						| с проблемой?
 					+e.txt Когда на нас надвигается новая технология, тот, кто не стал частью парового катка, становится частью мостовой.
 					+e.btn--dark(href='#') Найти решения
-				+e.col--dark.col-md-6
+				+e.col--dark.col-md-6.slideInRight.wow(data-wow-duration='.4s' data-wow-delay='.3s')
 					+e.H2.title
 						| Вместе
 						br

@@ -93,7 +93,9 @@
 			width: rem(380);
 			height: rem(389);
 		}
-		margin-left: auto;
+		@include media-breakpoint-up(lg){
+			margin-left: auto;
+		}
 
 		display: flex;
 		align-items: center;

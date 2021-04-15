@@ -3,7 +3,7 @@ mixin sDesisions(data)
 	+b.SECTION.sDesisions.section#sDesisions&attributes(attributes)
 		+e.bg--top
 			img(loading="lazy" src="img/svg/desisicons-triangle.svg" alt="")
-		+e.container.container
+		+e.container.container.fadeIn.wow(data-wow-duration='.4s' data-wow-delay='.3s')
 			+e.big-bg
 				img(loading="lazy" src="img/svg/desisions-bg.svg" alt='')
 			+b.section-title

@@ -302,6 +302,25 @@ function eventHandler() {
 	// modal window
 
 	//luckyone js
+
+	//css vars
+	let topNav = document.querySelector(".top-nav--js");
+	function calcHeaderHeight() {
+		document.documentElement.style.setProperty('--header-height', `${topNav.offsetHeight}px`);
+		if(window.scrollY > 0){
+			topNav.classList.add('active');
+		}
+		else{
+			topNav.classList.remove('active');
+		}
+	}
+	if(topNav){
+		window.addEventListener('resize', calcHeaderHeight, { passive: true });
+		window.addEventListener('scroll', calcHeaderHeight, { passive: true });
+		calcHeaderHeight();
+	}
+
+	//sliders
 	let tabsSlider = new Swiper('.tabs-slider-js', {
 		slidesPerView: 'auto',
 
@@ -332,6 +351,29 @@ function eventHandler() {
 		},
 
 	});
+	//wow js
+	let dur = .6;
+	let delay = 200;
+	$('.partenrs-item-js').each(function () {
+		$(this).addClass("wow fadeIn");
+		$(this).attr("data-wow-duration", dur + 's');
+		$(this).attr("data-wow-delay",	delay + 'ms');
+		delay+= 200;
+	});
+	delay = 200;
+	$('.sCards-item-js').each(function () {
+		$(this).addClass("wow fadeIn");
+		$(this).attr("data-wow-duration", dur + 's');
+		$(this).attr("data-wow-delay",	delay + 'ms');
+		delay+= 200;
+	});
+
+
+	let wow = new WOW({
+		mobile: false
+	});
+	wow.init();
+
 
 	//end luckyone js
 };

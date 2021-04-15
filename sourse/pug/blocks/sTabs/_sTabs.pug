@@ -7,7 +7,7 @@ mixin sTabs(data)
 			img(loading="lazy" src='img/svg/tabs-bot-r-line.svg' alt="")
 		+e.bg--b-mid
 			img(loading="lazy" src='img/svg/tabs-bot-mid-bg.svg' alt="")
-		.container
+		.container.fadeIn.wow(data-wow-duration='.4s' data-wow-delay='.3s')
 			+e.row.row.align-items-center.gy-4
 				.col-lg-8.tabs-slider-parent-js
 					+b.tabs

@@ -1,5 +1,8 @@
 // start .sCards
 .sCards {
+	@include media-breakpoint-up(lg){
+		--sPB: #{rem(90px)};
+	}
 	@include media-breakpoint-up(xl){
 		--sPT: #{rem(75)};
 		--sPB: #{rem(124)};

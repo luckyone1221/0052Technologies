@@ -306,6 +306,30 @@ function eventHandler() {
 		freeModeMomentum: true
 	})); // modal window
 	//luckyone js
+	//css vars
+
+	var topNav = document.querySelector(".top-nav--js");
+
+	function calcHeaderHeight() {
+		document.documentElement.style.setProperty('--header-height', "".concat(topNav.offsetHeight, "px"));
+
+		if (window.scrollY > 0) {
+			topNav.classList.add('active');
+		} else {
+			topNav.classList.remove('active');
+		}
+	}
+
+	if (topNav) {
+		window.addEventListener('resize', calcHeaderHeight, {
+			passive: true
+		});
+		window.addEventListener('scroll', calcHeaderHeight, {
+			passive: true
+		});
+		calcHeaderHeight();
+	} //sliders
+
 
 	var tabsSlider = new Swiper('.tabs-slider-js', {
 		slidesPerView: 'auto',
@@ -331,7 +355,27 @@ function eventHandler() {
 				spaceBetween: 32
 			}
 		}
-	}); //end luckyone js
+	}); //wow js
+
+	var dur = .6;
+	var delay = 200;
+	$('.partenrs-item-js').each(function () {
+		$(this).addClass("wow fadeIn");
+		$(this).attr("data-wow-duration", dur + 's');
+		$(this).attr("data-wow-delay", delay + 'ms');
+		delay += 200;
+	});
+	delay = 200;
+	$('.sCards-item-js').each(function () {
+		$(this).addClass("wow fadeIn");
+		$(this).attr("data-wow-duration", dur + 's');
+		$(this).attr("data-wow-delay", delay + 'ms');
+		delay += 200;
+	});
+	var wow = new WOW({
+		mobile: false
+	});
+	wow.init(); //end luckyone js
 }
 
 ;

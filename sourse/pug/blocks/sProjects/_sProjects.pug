@@ -2,7 +2,7 @@ mixin sProjects(data)
 	// start sProjects
 	+b.SECTION.sProjects.section#sProjects&attributes(attributes)
 		+e.ball
-		+e.container.container
+		+e.container.container.fadeIn.wow(data-wow-duration='.4s' data-wow-delay='.3s')
 			+b.section-title
 				h2 Проекты
 			+b.tabs

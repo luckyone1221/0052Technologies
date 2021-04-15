@@ -1,6 +1,18 @@
 .top-nav {
-	position: relative;
-	z-index: 2;
+	position: fixed;
+	z-index: 990;
+	width: 100%;
+	top: 0;
+	left: 0;
+
+	@include mt();
+	--box-bb-col: #{$gray-110};
+	&.fixed{
+		background: $white;
+		border-bottom: 1px solid $gray-110;
+		box-shadow: 0 0  10px 0 rgba($dark, .1);
+		--box-bb-col: transparent;
+	}
 
 	&__bg{
 		position: absolute;
@@ -16,8 +28,12 @@
 		}
 	}
 	&__box{
-		padding: rem(24px) 0;
-		border-bottom: 1px solid $gray-110;
+		padding: rem(16px) 0;
+		@include media-breakpoint-up(xxl){
+			padding: rem(24px) 0;
+		}
+
+		border-bottom: 1px solid var(--box-bb-col, #{$gray-110});
 	}
 	&__row{
 

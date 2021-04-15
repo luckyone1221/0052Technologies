@@ -9,6 +9,7 @@
 		<link type="image/ico" href="img/favicon.ico" rel="shortcut icon"><meta name="format-detection" content="telephone=no"> <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 		<link href="libs/@fancyapps/fancybox/jquery.fancybox.min.css" rel="stylesheet"/>
+		<link rel="stylesheet" href="js/animate.css/animate.min.css"/>
 		<link href="css/main.min.css" rel="stylesheet"/>
 	</head>
 	<body>
@@ -30,35 +31,38 @@
 				</div>
 			</div>
 			<!--  мобильное меню-->
-			<!--+header()-->
-			<!-- start top-nav-->
-			<div class="top-nav block-with-lazy">
-				<div class="container">
-					<div class="top-nav__box">
-						<div class="row align-items-center">
-							<div class="col"><a class="top-nav__logo" href="#"><img loading="lazy" src="img/@2x/logo.png" alt=""/></a>
-							</div>
-							<div class="col-auto d-none d-lg-block">
-								<div class="navMenu">
-									<ul>
-										<li><a href="#">Услуги</a></li>
-										<li><a href="#">Команда</a></li>
-										<li><a href="#">Контакты</a></li>
-										<li><a href="#">Решения</a></li>
-									</ul>
+			<!-- start header-->
+			<header class="header" id="header">
+				<!-- start top-nav-->
+				<div class="top-nav top-nav--js block-with-lazy">
+					<div class="container">
+						<div class="top-nav__box">
+							<div class="row align-items-center">
+								<div class="col"><a class="top-nav__logo" href="#"><img loading="lazy" src="img/@2x/logo.png" alt=""/></a>
 								</div>
-							</div>
-							<div class="col-auto d-none d-sm-block"><a class="top-nav__connect-btn" href="#">Связаться с нами</a>
-							</div>
-							<div class="col-auto d-lg-none">
-								<div class="toggle-menu-mobile toggle-menu-mobile--js"><span></span>
+								<div class="col-auto d-none d-lg-block">
+									<div class="navMenu">
+										<ul>
+											<li><a href="#">Услуги</a></li>
+											<li><a href="#">Команда</a></li>
+											<li><a href="#">Контакты</a></li>
+											<li><a href="#">Решения</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="col-auto d-none d-sm-block"><a class="top-nav__connect-btn" href="#">Связаться с нами</a>
+								</div>
+								<div class="col-auto d-lg-none">
+									<div class="toggle-menu-mobile toggle-menu-mobile--js"><span></span>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<!-- end top-nav-->
+				<!-- end top-nav-->
+			</header>
+			<!-- end header-->
 			<!-- start headerBlock-->
 			<div class="headerBlock section" id="headerBlock">
 				<div class="headerBlock__bg headerBlock__bg--elipse">
@@ -84,17 +88,17 @@
 							<div class="headerBlock__p-title">Клиенты и партнеры:
 							</div>
 							<div class="headerBlock__p-items row gy-3 gy-sm-0">
-								<div class="headerBlock__p-item col-6 col-sm-auto headerBlock__p-item headerBlock__p-item--1"><img loading="lazy" src="img/@2x/partners-1.png" alt=""/>
+								<div class="headerBlock__p-item partenrs-item-js col-6 col-sm-auto headerBlock__p-item headerBlock__p-item--1"><img loading="lazy" src="img/@2x/partners-1.png" alt=""/>
 								</div>
-								<div class="headerBlock__p-item col-6 col-sm-auto headerBlock__p-item headerBlock__p-item--2"><img loading="lazy" src="img/@2x/partners-2.png" alt=""/>
+								<div class="headerBlock__p-item partenrs-item-js col-6 col-sm-auto headerBlock__p-item headerBlock__p-item--2"><img loading="lazy" src="img/@2x/partners-2.png" alt=""/>
 								</div>
-								<div class="headerBlock__p-item col-6 col-sm-auto headerBlock__p-item headerBlock__p-item--3"><img loading="lazy" src="img/@2x/partners-3.png" alt=""/>
+								<div class="headerBlock__p-item partenrs-item-js col-6 col-sm-auto headerBlock__p-item headerBlock__p-item--3"><img loading="lazy" src="img/@2x/partners-3.png" alt=""/>
 								</div>
-								<div class="headerBlock__p-item col-6 col-sm-auto headerBlock__p-item headerBlock__p-item--4"><img loading="lazy" src="img/@2x/partners-4.png" alt=""/>
+								<div class="headerBlock__p-item partenrs-item-js col-6 col-sm-auto headerBlock__p-item headerBlock__p-item--4"><img loading="lazy" src="img/@2x/partners-4.png" alt=""/>
 								</div>
-								<div class="headerBlock__p-item col-6 col-sm-auto headerBlock__p-item headerBlock__p-item--5"><img loading="lazy" src="img/@2x/partners-5.png" alt=""/>
+								<div class="headerBlock__p-item partenrs-item-js col-6 col-sm-auto headerBlock__p-item headerBlock__p-item--5"><img loading="lazy" src="img/@2x/partners-5.png" alt=""/>
 								</div>
-								<div class="headerBlock__p-item col-6 col-sm-auto headerBlock__p-item headerBlock__p-item--6"><img loading="lazy" src="img/@2x/partners-6.png" alt=""/>
+								<div class="headerBlock__p-item partenrs-item-js col-6 col-sm-auto headerBlock__p-item headerBlock__p-item--6"><img loading="lazy" src="img/@2x/partners-6.png" alt=""/>
 								</div>
 							</div>
 						</div>
@@ -109,17 +113,17 @@
 						<h2>Ключевые компетенции</h2>
 					</div>
 					<div class="sCards__row row gy-4">
-						<div class="col-sm-6 col-lg-4"><a class="sCards__item" href="#"><span class="sCards__title"><span class="h3">Веб<br/>Разработка</span></span><span class="sCards__descr">Мы занимаемся разработкой высокотехнологичных порталов и интегрированных веб–систем, </span></a>
+						<div class="col-sm-6 col-lg-4 sCards-item-js"><a class="sCards__item" href="#"><span class="sCards__title"><span class="h3">Веб<br/>Разработка</span></span><span class="sCards__descr">Мы занимаемся разработкой высокотехнологичных порталов и интегрированных веб–систем, </span></a>
 						</div>
-						<div class="col-sm-6 col-lg-4"><a class="sCards__item" href="#"><span class="sCards__title"><span class="h3">Корпоративные<br/>системы</span></span><span class="sCards__descr">Мы занимаемся разработкой высокотехнологичных порталов и интегрированных веб–систем, </span></a>
+						<div class="col-sm-6 col-lg-4 sCards-item-js"><a class="sCards__item" href="#"><span class="sCards__title"><span class="h3">Корпоративные<br/>системы</span></span><span class="sCards__descr">Мы занимаемся разработкой высокотехнологичных порталов и интегрированных веб–систем, </span></a>
 						</div>
-						<div class="col-sm-6 col-lg-4"><a class="sCards__item" href="#"><span class="sCards__title"><span class="h3">Дизайн и<br/>3д моделлинг</span></span><span class="sCards__descr">Мы занимаемся разработкой высокотехнологичных порталов и интегрированных веб–систем, </span></a>
+						<div class="col-sm-6 col-lg-4 sCards-item-js"><a class="sCards__item" href="#"><span class="sCards__title"><span class="h3">Дизайн и<br/>3д моделлинг</span></span><span class="sCards__descr">Мы занимаемся разработкой высокотехнологичных порталов и интегрированных веб–систем, </span></a>
 						</div>
-						<div class="col-sm-6 col-lg-4"><a class="sCards__item" href="#"><span class="sCards__title"><span class="h3">Мобильные<br/>приложения</span></span><span class="sCards__descr">Мы занимаемся разработкой высокотехнологичных порталов и интегрированных веб–систем, </span></a>
+						<div class="col-sm-6 col-lg-4 sCards-item-js"><a class="sCards__item" href="#"><span class="sCards__title"><span class="h3">Мобильные<br/>приложения</span></span><span class="sCards__descr">Мы занимаемся разработкой высокотехнологичных порталов и интегрированных веб–систем, </span></a>
 						</div>
-						<div class="col-sm-6 col-lg-4"><a class="sCards__item" href="#"><span class="sCards__title"><span class="h3">Техническое<br/>сопровождение</span></span><span class="sCards__descr">Мы занимаемся разработкой высокотехнологичных порталов и интегрированных веб–систем, </span></a>
+						<div class="col-sm-6 col-lg-4 sCards-item-js"><a class="sCards__item" href="#"><span class="sCards__title"><span class="h3">Техническое<br/>сопровождение</span></span><span class="sCards__descr">Мы занимаемся разработкой высокотехнологичных порталов и интегрированных веб–систем, </span></a>
 						</div>
-						<div class="col-sm-6 col-lg-4"><a class="sCards__item" href="#"><span class="sCards__title"><span class="h3">Индивидуальные<br/>решения</span></span><span class="sCards__descr">Мы занимаемся разработкой высокотехнологичных порталов и интегрированных веб–систем, </span></a>
+						<div class="col-sm-6 col-lg-4 sCards-item-js"><a class="sCards__item" href="#"><span class="sCards__title"><span class="h3">Индивидуальные<br/>решения</span></span><span class="sCards__descr">Мы занимаемся разработкой высокотехнологичных порталов и интегрированных веб–систем, </span></a>
 						</div>
 					</div>
 				</div>
@@ -133,7 +137,7 @@
 				</div>
 				<div class="sTabs__bg sTabs__bg--b-mid"><img loading="lazy" src="img/svg/tabs-bot-mid-bg.svg" alt=""/>
 				</div>
-				<div class="container">
+				<div class="container fadeIn wow" data-wow-duration=".4s" data-wow-delay=".3s">
 					<div class="sTabs__row row align-items-center gy-4">
 						<div class="col-lg-8 tabs-slider-parent-js">
 							<div class="tabs">
@@ -181,7 +185,7 @@
 			<section class="sProjects section" id="sProjects">
 				<div class="sProjects__ball">
 				</div>
-				<div class="sProjects__container container">
+				<div class="sProjects__container container fadeIn wow" data-wow-duration=".4s" data-wow-delay=".3s">
 					<div class="section-title">
 						<h2>Проекты</h2>
 					</div>
@@ -258,7 +262,7 @@
 			<section class="sDesisions section" id="sDesisions">
 				<div class="sDesisions__bg sDesisions__bg--top"><img loading="lazy" src="img/svg/desisicons-triangle.svg" alt=""/>
 				</div>
-				<div class="sDesisions__container container">
+				<div class="sDesisions__container container fadeIn wow" data-wow-duration=".4s" data-wow-delay=".3s">
 					<div class="sDesisions__big-bg"><img loading="lazy" src="img/svg/desisions-bg.svg" alt=""/>
 					</div>
 					<div class="section-title">
@@ -335,13 +339,13 @@
 					<div class="sColor__descr text-center">РусТехнолоджи предоставляет услуги полного цикла по разработке, внедрению и сопровождению IT-решений. Мы разрабатываем функциональные веб-сайты, мобильные приложения, проектируем правильные интерфейсы, реализуем и автоматизируем сложные бизнес-процессы, и делаем это все красиво.
 					</div>
 					<div class="sColor__row row">
-						<div class="sColor__col sColor__col--primary col-md-6">
+						<div class="sColor__col sColor__col--primary col-md-6 slideInLeft wow" data-wow-duration=".4s" data-wow-delay=".3s">
 							<h2 class="sColor__title">Бизнес<br/>столкнулся<br/>с проблемой?
 							</h2>
 							<div class="sColor__txt">Когда на нас надвигается новая технология, тот, кто не стал частью парового катка, становится частью мостовой.
 							</div><a class="sColor__btn sColor__btn--dark" href="#">Найти решения</a>
 						</div>
-						<div class="sColor__col sColor__col--dark col-md-6">
+						<div class="sColor__col sColor__col--dark col-md-6 slideInRight wow" data-wow-duration=".4s" data-wow-delay=".3s">
 							<h2 class="sColor__title">Вместе<br/>мы можем<br/>больше
 							</h2>
 							<div class="sColor__txt">
@@ -447,6 +451,7 @@
 		<script src="libs/@fancyapps/fancybox/jquery.fancybox.min.js"></script>
 		<!-- modal libs-->
 		<!-- slider libs-->
+		<script src="libs/wowjs/wow.min.js"></script>
 		<script src="libs/swiper/swiper-bundle.min.js"> </script>
 		<!-- /slider libs-->
 		<script src="libs/inputmask/inputmask.min.js"></script>
