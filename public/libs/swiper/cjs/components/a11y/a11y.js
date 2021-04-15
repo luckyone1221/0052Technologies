@@ -93,7 +93,7 @@ var A11y = {
       }
     }
 
-    if (swiper.pagination && $targetEl.is("." + swiper.params.pagination.bulletClass.replace(/ /g, '.'))) {
+    if (swiper.pagination && $targetEl.is((0, _utils.classesToSelector)(swiper.params.pagination.bulletClass))) {
       $targetEl[0].click();
     }
   },
@@ -224,7 +224,7 @@ var A11y = {
 
 
     if (swiper.pagination && swiper.params.pagination.clickable && swiper.pagination.bullets && swiper.pagination.bullets.length) {
-      swiper.pagination.$el.on('keydown', "." + swiper.params.pagination.bulletClass.replace(/ /g, '.'), swiper.a11y.onEnterOrSpaceKey);
+      swiper.pagination.$el.on('keydown', (0, _utils.classesToSelector)(swiper.params.pagination.bulletClass), swiper.a11y.onEnterOrSpaceKey);
     }
   },
   destroy: function destroy() {
@@ -251,7 +251,7 @@ var A11y = {
 
 
     if (swiper.pagination && swiper.params.pagination.clickable && swiper.pagination.bullets && swiper.pagination.bullets.length) {
-      swiper.pagination.$el.off('keydown', "." + swiper.params.pagination.bulletClass.replace(/ /g, '.'), swiper.a11y.onEnterOrSpaceKey);
+      swiper.pagination.$el.off('keydown', (0, _utils.classesToSelector)(swiper.params.pagination.bulletClass), swiper.a11y.onEnterOrSpaceKey);
     }
   }
 };

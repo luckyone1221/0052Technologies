@@ -1,0 +1,33 @@
+mixin sColor(data)
+	// start sColor
+	+b.SECTION.sColor.section#sColor&attributes(attributes)
+		+e.bg--left.d-none.d-base-block
+			img(loading="lazy" src="img/svg/scolor-left.svg" alt="")
+		+e.bg--right.d-none.d-xl-block
+			img(loading="lazy" src="img/svg/scolor-right-sq.svg" alt="")
+		.container
+			+e.descr.text-center РусТехнолоджи предоставляет услуги полного цикла по разработке, внедрению и сопровождению IT-решений. Мы разрабатываем функциональные веб-сайты, мобильные приложения, проектируем правильные интерфейсы, реализуем и автоматизируем сложные бизнес-процессы, и делаем это все красиво.
+			+e.row.row
+				+e.col--primary.col-md-6
+					+e.H2.title
+						| Бизнес
+						br
+						| столкнулся
+						br
+						| с проблемой?
+					+e.txt Когда на нас надвигается новая технология, тот, кто не стал частью парового катка, становится частью мостовой.
+					+e.btn--dark(href='#') Найти решения
+				+e.col--dark.col-md-6
+					+e.H2.title
+						| Вместе
+						br
+						| мы можем
+						br
+						| больше
+					+e.txt
+						| Собраться вместе – это начало. Оставаться вместе – это прогресс.
+						|
+						br
+						| Работать вместе – это успех.
+					+e.btn--primary(href='#') Запартнериться =)
+	// end sColor

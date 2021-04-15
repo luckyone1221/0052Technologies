@@ -1,61 +1,84 @@
 .top-nav {
-	position: sticky; 
-	left: 0;
-	// left: 200px;
-	// right: -200px;
-	// margin-right: -200px;
-	top: 0;
-	left: 0;
-	z-index: 800;
-	background-color: #fff;
-	border-bottom: 1px solid #000; 
-	--color-link: 255,
-	0,
-	0;
-	background-color: #{rgba(var(--color-link), .5)};
-	&.fixed { 
-		bottom: auto;
-		margin-top: 0;
+	position: relative;
+	z-index: 2;
+
+	&__bg{
+		position: absolute;
+		z-index: -1;
+		right: 0;
+		top: 0;
+		height: 100%;
+		width: auto;
+		img{
+			width: auto;
+			height: auto;
+			max-height: 100%;
+		}
 	}
-	.row{
-	 
+	&__box{
+		padding: rem(24px) 0;
+		border-bottom: 1px solid $gray-110;
 	}
+	&__row{
 
-	// 
-	@include media-breakpoint-up(xl) {}
+	}
+	&__logo{
+		display: block;
+		width: rem(195);
+		img{
+			width: auto;
+			max-width: 100%;
+		}
+	}
+	.navMenu{
+		ul{
+			display: flex;
+			list-style: none;
+			margin: 0;
 
-	@include media-breakpoint-up(lg) {}
+			& > li{
+				margin-right: rem(20);
+				@include media-breakpoint-up(xl){
+					margin-right: rem(64);
+				}
 
-	@include media-breakpoint-up(md) {}
+				&:last-child{
+					margin-right: 0;
+				}
 
-	@include media-breakpoint-up(sm) {}
+				& > a{
+					font-family: $mono;
+					font-weight: 500;
+					font-size: rem(14px);
+					line-height: 1;
+					color: $brown;
+					&:hover{
+						text-shadow: 0 0 1px rgba($brown, .7);
+					}
+				}
+			}
+		}
+	}
+	&__connect-btn{
+		@extend .btn;
+		@extend .btn-warning;
 
-	@include media-breakpoint-up(xs) {}
+		line-height: 1;
+		padding: rem(8) rem(16);
 
-	// 
-	@include media-breakpoint-between(md, xl) {}
+		font-family: $mono;
+		font-weight: 500;
+		font-size: rem(14px);
+		color: $black;
 
-	// 
-	@include media-breakpoint-only(xs) {}
-
-	@include media-breakpoint-only(sm) {}
-
-	@include media-breakpoint-only(md) {}
-
-	@include media-breakpoint-only(lg) {}
-
-	@include media-breakpoint-only(xl) {}
-
-	// 
-	@include media-breakpoint-down(xl) {}
-
-	@include media-breakpoint-down(lg) {}
-
-	@include media-breakpoint-down(md) {}
-
-	@include media-breakpoint-down(sm) {}
-
-	@include media-breakpoint-down(xs) {}
+		@include media-breakpoint-up(md){
+			margin-left: rem(30);
+		}
+		@include media-breakpoint-up(xxl){
+			margin-left: 121px;
+		}
+	}
+	&__{}
 }
 
 

@@ -1,11 +1,9 @@
-
 $h: em(2);
-
 .toggle-menu-mobile {
 	display: block;
 	height: $h* 12;
 	position: relative;
-	color: $primary;
+	color: $dark;
 	font-size: 32px;
 	width: 1em;
 	&.on {
@@ -93,7 +91,7 @@ $h: em(2);
 	will-change: transform;
 
 	&__inner {
-		background-color: #c3c3c3;
+		background-color: $white;
 		padding: rem(20) 0;
 		overflow-x: hidden;
 		overflow-y: auto;
@@ -142,14 +140,32 @@ $h: em(2);
 	li {
 		display: block;
 		margin: 0;
-		border-top: 1px solid rgba(255, 255, 255, .13);
-
 		a {
-			// font-size: 16px;
-
+			color: $dark;
 			padding: 10px;
 			display: block;
 
 		}
+	}
+
+
+	&__logo{
+		display: block;
+		margin-bottom: rem(10);
+		padding: 10px;
+		img{
+			width: auto;
+			height: auto;
+			max-width: 100%;
+		}
+	}
+
+	&__btn-cont{
+		padding: rem(30) 10px;
+	}
+	&__btn{
+		@extend .btn;
+		@extend .btn-warning;
+		width: 100%;
 	}
 }

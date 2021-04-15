@@ -1,0 +1,51 @@
+mixin sProjects(data)
+	// start sProjects
+	+b.SECTION.sProjects.section#sProjects&attributes(attributes)
+		+e.ball
+		+e.container.container
+			+b.section-title
+				h2 Проекты
+			+b.tabs
+				+e.caption.swiper-container.sProject-tabs-slider-js
+					.swiper-wrapper
+						+sTabsSlide('worldskill')(class="active")
+						+sTabsSlide('РОстелеком')
+						+sTabsSlide('Росбанк')
+						+sTabsSlide('Компания')
+						+sTabsSlide('Еще компания')
+				+e.wrap
+					+e.content.active
+						+sProjectsBox()
+					+e.content 2
+					+e.content 3
+					+e.content 4
+	// end sProjects
+
+mixin sProjectsBox()
+	+b.sProjects-box
+		+e.row.row.gy-5
+			.col-lg-auto
+				+e.img
+					img(loading="lazy" src="img/@2x/sProjects-img.png" alt="")
+			.col-lg
+				+e.H3.sub-title Worldskills
+				+e.descr-txt Агентство развития профессионального мастерства
+				+e.pills-row.row.gy-2
+					.col-auto
+						+e.btn(href="#") Страхование
+					.col-auto
+						+e.btn(href="#") Мобильное приложение
+				+e.descr-row.row
+					+sProjectsBoxItem()
+						| Предоставляет услуги полного цикла по разработке, внедрению и сопровождению IT-решений.
+					+sProjectsBoxItem()
+						| Предоставляет услуги полного цикла по разработке, внедрению и сопровождени
+					+sProjectsBoxItem()
+						| Предоставляет услуги полного цикла по разработке, внедрени
+					+sProjectsBoxItem()
+						| Предоставляет услуги полного цикла по разработке,
+				+e.learn-more-btn(href="#") Узнать больше
+
+mixin sProjectsBoxItem()
+	+e.col.col-lg-6
+		block

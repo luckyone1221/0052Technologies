@@ -40,11 +40,10 @@ function setProperty(val, obj = {}) {
     if (isObject(val)) {
         return val;
     }
-    const newValue = coerceBooleanProperty(val);
-    if (newValue === true) {
+    if (coerceBooleanProperty(val) === true) {
         return obj;
     }
-    return newValue;
+    return false;
 }
 
 /* underscore in name -> watch for changes */
@@ -474,18 +473,20 @@ class SwiperComponent {
         };
     }
     set navigation(val) {
-        var _a, _b, _c, _d, _e, _f;
+        var _a, _b, _c, _d, _e, _f, _g, _h;
         const currentNext = typeof this._navigation !== 'boolean' ? (_a = this._navigation) === null || _a === void 0 ? void 0 : _a.nextEl : null;
         const currentPrev = typeof this._navigation !== 'boolean' ? (_b = this._navigation) === null || _b === void 0 ? void 0 : _b.prevEl : null;
         this._navigation = setProperty(val, {
             nextEl: currentNext || null,
             prevEl: currentPrev || null,
         });
-        if (typeof this._navigation !== 'boolean' &&
-            (typeof ((_c = this._navigation) === null || _c === void 0 ? void 0 : _c.nextEl) === 'string' ||
-                typeof ((_d = this._navigation) === null || _d === void 0 ? void 0 : _d.prevEl) === 'string' ||
-                typeof ((_e = this._navigation) === null || _e === void 0 ? void 0 : _e.nextEl) === 'object' ||
-                typeof ((_f = this._navigation) === null || _f === void 0 ? void 0 : _f.prevEl) === 'object')) {
+        if (coerceBooleanProperty(val) !== true &&
+            typeof this._navigation !== 'boolean' &&
+            ((_c = this._navigation) === null || _c === void 0 ? void 0 : _c.prevEl) !== ((_d = this._prevElRef) === null || _d === void 0 ? void 0 : _d.nativeElement) &&
+            (typeof ((_e = this._navigation) === null || _e === void 0 ? void 0 : _e.nextEl) === 'string' ||
+                typeof ((_f = this._navigation) === null || _f === void 0 ? void 0 : _f.prevEl) === 'string' ||
+                typeof ((_g = this._navigation) === null || _g === void 0 ? void 0 : _g.nextEl) === 'object' ||
+                typeof ((_h = this._navigation) === null || _h === void 0 ? void 0 : _h.prevEl) === 'object')) {
             this.showNavigation = false;
         }
     }
@@ -493,13 +494,15 @@ class SwiperComponent {
         return this._navigation;
     }
     set pagination(val) {
-        var _a, _b, _c;
+        var _a, _b, _c, _d, _e;
         const current = typeof this._pagination !== 'boolean' ? (_a = this._pagination) === null || _a === void 0 ? void 0 : _a.el : null;
         this._pagination = setProperty(val, {
             el: current || null,
         });
-        if (typeof this._pagination !== 'boolean' &&
-            (typeof ((_b = this._pagination) === null || _b === void 0 ? void 0 : _b.el) === 'string' || typeof ((_c = this._pagination) === null || _c === void 0 ? void 0 : _c.el) === 'object')) {
+        if (coerceBooleanProperty(val) !== true &&
+            typeof this._pagination !== 'boolean' &&
+            ((_b = this._pagination) === null || _b === void 0 ? void 0 : _b.el) !== ((_c = this._paginationElRef) === null || _c === void 0 ? void 0 : _c.nativeElement) &&
+            (typeof ((_d = this._pagination) === null || _d === void 0 ? void 0 : _d.el) === 'string' || typeof ((_e = this._pagination) === null || _e === void 0 ? void 0 : _e.el) === 'object')) {
             this.showPagination = false;
         }
     }
@@ -507,13 +510,15 @@ class SwiperComponent {
         return this._pagination;
     }
     set scrollbar(val) {
-        var _a, _b, _c;
+        var _a, _b, _c, _d, _e;
         const current = typeof this._scrollbar !== 'boolean' ? (_a = this._scrollbar) === null || _a === void 0 ? void 0 : _a.el : null;
         this._scrollbar = setProperty(val, {
             el: current || null,
         });
-        if (typeof this._scrollbar !== 'boolean' &&
-            (typeof ((_b = this._scrollbar) === null || _b === void 0 ? void 0 : _b.el) === 'string' || typeof ((_c = this._scrollbar) === null || _c === void 0 ? void 0 : _c.el) === 'object')) {
+        if (coerceBooleanProperty(val) !== true &&
+            typeof this._scrollbar !== 'boolean' &&
+            ((_b = this._scrollbar) === null || _b === void 0 ? void 0 : _b.el) !== ((_c = this._scrollbarElRef) === null || _c === void 0 ? void 0 : _c.nativeElement) &&
+            (typeof ((_d = this._scrollbar) === null || _d === void 0 ? void 0 : _d.el) === 'string' || typeof ((_e = this._scrollbar) === null || _e === void 0 ? void 0 : _e.el) === 'object')) {
             this.showScrollbar = false;
         }
     }
@@ -535,15 +540,19 @@ class SwiperComponent {
         Object.assign(this, params);
     }
     set prevElRef(el) {
+        this._prevElRef = el;
         this._setElement(el, this.navigation, 'navigation', 'prevEl');
     }
     set nextElRef(el) {
+        this._nextElRef = el;
         this._setElement(el, this.navigation, 'navigation', 'nextEl');
     }
     set scrollbarElRef(el) {
+        this._scrollbarElRef = el;
         this._setElement(el, this.scrollbar, 'scrollbar');
     }
     set paginationElRef(el) {
+        this._paginationElRef = el;
         this._setElement(el, this.pagination, 'pagination');
     }
     get activeSlides() {

@@ -1,10 +1,38 @@
 mixin headerBlock()
 	// start headerBlock
 	+b.headerBlock.section#headerBlock&attributes(attributes)
+		+e.bg--elipse
+		+e.bg--bot-line.d-none.d-sm-block
+			img(src="img/svg/hb-bot-line.svg	" alt="")
+		+e.bg--right
+			img(src="img/@2x/headerBlock-bg3.png" alt="")
 		.container
-			+b.section-title.text-center
-				h2 headerBlock ds dfsdfdsfsd
-
-			.row
-						
+			.row.gy-5
+				+e.txt-col.col-lg-6
+					+b.section-title
+						h1
+							| Проекты
+							br
+							| для бизнеса
+							br
+							| и людей
+						p  Мы предлагаем широкий спектр IT услуг с индивидуальным подходом и инновационными идеями для любой сферы бизнеса.
+						p
+							| Мы осуществляем комплексную разработку custom* it решений.
+							| Высоконагруженных систем, решений для частного бизнеса (CRM, информационная безопасность).
+						p Отдельным направлением является разработка бренда включая разработку&nbsp;его коммуникативной и&nbsp;визуальной стратегии.
+					+e.btn(href='#') Начать сотрудничать
+				+e.partners-col.col.ms-lg-auto
+					+e.p-title Клиенты и партнеры:
+					+e.p-items.row.gy-3.gy-sm-0
+						+pItem(1)
+						+pItem(2)
+						+pItem(3)
+						+pItem(4)
+						+pItem(5)
+						+pItem(6)
 	// end headerBlock
+
+mixin pItem(imgNum)
+	+e.p-item.col-6.col-sm-auto(class=`headerBlock__p-item--${imgNum}`)
+		img(loading="lazy" src=`img/@2x/partners-${imgNum}.png` alt="")

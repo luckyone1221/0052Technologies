@@ -1,0 +1,92 @@
+// start .sCards
+.sCards {
+	@include media-breakpoint-up(xl){
+		--sPT: #{rem(75)};
+		--sPB: #{rem(124)};
+		--sTPB: #{rem(39)};
+	}
+
+	position: relative;
+	z-index: 2;
+	background: linear-gradient(245.99deg, #0F0B31 12.72%, #26233D 70.04%, #2F2C41 89.15%);
+	color: $white;
+
+	&__row{
+		@include media-breakpoint-up(sm){
+			@include roww(rem(30));
+		}
+		@include media-breakpoint-up(xxl){
+			@include roww(rem(40));
+			--bs-gutter-y: #{rem(32)}!important;
+		}
+
+		//col
+		& > *{
+			@include media-breakpoint-up(lg){
+				position: relative;
+
+				//1 col
+				&:nth-child(3n + 1){
+					top: rem(27px);
+				}
+				//2 col
+				&:nth-child(3n + 2){
+
+				}
+				//3 col
+				&:nth-child(3n + 3){
+					top: rem(46);
+				}
+			}
+			//
+		}
+	}
+	&__item{
+		display: block;
+		min-height: 100%;
+		@include mt();
+
+		padding: rem(30) rem(15);
+		@include media-breakpoint-up(sm){
+			padding: rem(35) rem(20) rem(45);
+		}
+		@include media-breakpoint-up(xl){
+			padding: rem(46px) rem(27px) rem(52px);
+		}
+
+		border: 1px solid rgba($primary, .5);
+		color: $white;
+		background-color: transparent;
+		--title-bb-col: #{rgba($white, .1)};
+		&:hover{
+			--title-bb-col: #{rgba($dark, .1)};
+			color: $dark;
+			background-color: $primary;
+		}
+	}
+	&__title{
+		display: block;
+		border-bottom: 1px solid var(--title-bb-col, #{rgba($white, .1)});
+
+		span.h3{
+			line-height: 1;
+			display: block;
+
+			margin-bottom: rem(28);
+			@include media-breakpoint-up(xl){
+				margin-bottom: rem(38);
+			}
+		}
+
+		margin-bottom: rem(28);
+		@include media-breakpoint-up(xl){
+			margin-bottom: rem(38);
+		}
+	}
+	&__descr{
+
+	}
+	&__{}
+	&__{}
+	&__{}
+} // end.sCards

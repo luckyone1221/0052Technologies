@@ -132,44 +132,25 @@ var JSCCommon = {
 	// /mobileMenu
 	// tabs  .
 	tabscostume: function tabscostume(tab) {
-		var tabs = document.querySelectorAll(tab); // const indexOf = element => Array.from(element.parentNode.children).indexOf(element);
+		var tabs = {
+			Btn: [].slice.call(document.querySelectorAll(".".concat(tab, "__btn"))),
+			BtnParent: [].slice.call(document.querySelectorAll(".".concat(tab, "__caption"))),
+			Content: [].slice.call(document.querySelectorAll(".".concat(tab, "__content")))
+		};
+		tabs.Btn.forEach(function (element, index) {
+			element.addEventListener('click', function () {
+				if (!element.classList.contains('active')) {
+					//turn off old
+					var oldActiveEl = element.closest(".".concat(tab)).querySelector(".".concat(tab, "__btn.active"));
+					var oldActiveContent = tabs.Content[index].closest(".".concat(tab)).querySelector(".".concat(tab, "__content.active"));
+					oldActiveEl.classList.remove('active');
+					oldActiveContent.classList.remove('active'); //turn on new(cklicked el)
 
-		tabs.forEach(function (element) {
-			var tabs = element;
-			var tabsCaption = tabs.querySelector(".tabs__caption");
-			var tabsBtn = tabsCaption.querySelectorAll(".tabs__btn");
-			var tabsWrap = tabs.querySelector(".tabs__wrap");
-			var tabsContent = tabsWrap.querySelectorAll(".tabs__content");
-			var random = Math.trunc(Math.random() * 1000);
-			tabsBtn.forEach(function (el, index) {
-				var data = "tab-content-".concat(random, "-").concat(index);
-				el.dataset.tabBtn = data;
-				var content = tabsContent[index];
-				content.dataset.tabContent = data;
-				if (!content.dataset.tabContent == data) return;
-				var active = content.classList.contains('active') ? 'active' : ''; // console.log(el.innerHTML);
-
-				content.insertAdjacentHTML("beforebegin", "<div class=\"tabs__btn-accordion  btn btn-primary  mb-1 ".concat(active, "\" data-tab-btn=\"").concat(data, "\">").concat(el.innerHTML, "</div>"));
+					element.classList.add('active');
+					tabs.Content[index].classList.add('active');
+				}
 			});
-			tabs.addEventListener('click', function (element) {
-				var btn = element.target.closest("[data-tab-btn]:not(.active)");
-				if (!btn) return;
-				var data = btn.dataset.tabBtn;
-				var tabsAllBtn = this.querySelectorAll("[data-tab-btn");
-				var content = this.querySelectorAll("[data-tab-content]");
-				tabsAllBtn.forEach(function (element) {
-					element.dataset.tabBtn == data ? element.classList.add('active') : element.classList.remove('active');
-				});
-				content.forEach(function (element) {
-					element.dataset.tabContent == data ? (element.classList.add('active'), element.previousSibling.classList.add('active')) : element.classList.remove('active');
-				});
-			});
-		}); // $('.' + tab + '__caption').on('click', '.' + tab + '__btn:not(.active)', function (e) {
-		// 	$(this)
-		// 		.addClass('active').siblings().removeClass('active')
-		// 		.closest('.' + tab).find('.' + tab + '__content').hide().removeClass('active')
-		// 		.eq($(this).index()).fadeIn().addClass('active');
-		// });
+		});
 	},
 	// /tabs
 	inputMask: function inputMask() {
@@ -269,7 +250,7 @@ function eventHandler() {
 
 	JSCCommon.ifie();
 	JSCCommon.modalCall();
-	JSCCommon.tabscostume('.tabs--js');
+	JSCCommon.tabscostume('tabs');
 	JSCCommon.mobileMenu();
 	JSCCommon.inputMask();
 	JSCCommon.sendForm();
@@ -278,10 +259,9 @@ function eventHandler() {
 
 	var x = window.location.host;
 	var screenName;
-	screenName = document.body.dataset.bg;
+	screenName = '01.png';
 
-	if (screenName && x.includes("localhost:30")) {
-		document.body.insertAdjacentHTML("beforeend", "<div class=\"pixel-perfect\" style=\"background-image: url(screen/".concat(screenName, ");\"></div>"));
+	if (screenName && x.includes("localhost:30")) {//document.body.insertAdjacentHTML("beforeend", `<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
 	}
 
 	function whenResize() {
@@ -325,6 +305,33 @@ function eventHandler() {
 		slideToClickedSlide: true,
 		freeModeMomentum: true
 	})); // modal window
+	//luckyone js
+
+	var tabsSlider = new Swiper('.tabs-slider-js', {
+		slidesPerView: 'auto',
+		breakpoints: {
+			0: {
+				spaceBetween: 20
+			},
+			768: {
+				spaceBetween: 32
+			},
+			1500: {
+				spaceBetween: 58
+			}
+		}
+	});
+	var sProjectsTabsSlider = new Swiper('.sProject-tabs-slider-js', {
+		slidesPerView: 'auto',
+		breakpoints: {
+			0: {
+				spaceBetween: 20
+			},
+			768: {
+				spaceBetween: 32
+			}
+		}
+	}); //end luckyone js
 }
 
 ;
@@ -333,10 +340,4 @@ if (document.readyState !== 'loading') {
 	eventHandler();
 } else {
 	document.addEventListener('DOMContentLoaded', eventHandler);
-} // window.onload = function () {
-// 	document.body.classList.add('loaded_hiding');
-// 	window.setTimeout(function () {
-// 		document.body.classList.add('loaded');
-// 		document.body.classList.remove('loaded_hiding');
-// 	}, 500);
-// }
+}

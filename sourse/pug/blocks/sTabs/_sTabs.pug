@@ -1,0 +1,32 @@
+mixin sTabs(data)
+	// start sTabs
+	+b.sTabs.section#sTabs&attributes(attributes)
+		+e.bg--top
+			img(loading="lazy" src='img/svg/tabs-top-l-bg.svg' alt="")
+		+e.bg--bot
+			img(loading="lazy" src='img/svg/tabs-bot-r-line.svg' alt="")
+		+e.bg--b-mid
+			img(loading="lazy" src='img/svg/tabs-bot-mid-bg.svg' alt="")
+		.container
+			+e.row.row.align-items-center.gy-4
+				.col-lg-8.tabs-slider-parent-js
+					+b.tabs
+						+e.caption.swiper-container.tabs-slider-js
+							.swiper-wrapper
+								+sTabsSlide('О нас')(class="active")
+								+sTabsSlide('Как мы работаем')
+								+sTabsSlide('Технологии')
+								+sTabsSlide('Решения')
+						+e.wrap
+							+e.content.active РусТехнолоджи предоставляет услуги полного цикла по разработке, внедрению и сопровождению IT-решений. Мы разрабатываем функциональные веб-сайты, мобильные приложения, проектируем правильные интерфейсы, реализуем и автоматизируем сложные бизнес-процессы, и делаем это все красиво.
+							+e.content 2
+							+e.content 3
+							+e.content 4
+				.col-lg-4
+					+e.img
+						img(loading="lazy" src="img/svg/stabs-img.svg" alt="")
+	// end sTabs
+
+mixin sTabsSlide(txt)
+	.swiper-slide
+		+e.btn&attributes(attributes)=txt

@@ -6,220 +6,417 @@
 		<meta name="description" content="о чем страница">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width,initial-scale=1.0">
-		<link type="image/ico" href="img/favicon.ico" rel="shortcut icon"><meta name="format-detection" content="telephone=no"> 
+		<link type="image/ico" href="img/favicon.ico" rel="shortcut icon"><meta name="format-detection" content="telephone=no"> <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 		<link href="libs/@fancyapps/fancybox/jquery.fancybox.min.css" rel="stylesheet"/>
 		<link href="css/main.min.css" rel="stylesheet"/>
 	</head>
 	<body>
 		<div class="main-wrapper">
 			<div class="menu-mobile menu-mobile--js d-lg-none">
-				<div class="toggle-menu-mobile toggle-menu-mobile--js on"><span></span>
+				<div class="toggle-menu-mobile toggle-menu-mobile--js"><span></span>
 				</div>
-				<div class="menu-mobile__inner">
-					<ul class="navMenu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-						<li class="navMenu__item navMenu__item--has-children" itemprop="item"><a class="navMenu__link" href="#" itemprop="url">О нас</a>
-							<ul class="sub-menu">
-								<li class="sub-menu__item" temprop="item"><a class="sub-menu__link" href="#" itemprop="url">Главная</a>
-								</li>
-								<li class="sub-menu__item" temprop="item"><a class="sub-menu__link" href="#" itemprop="url">Услуги  </a>
-								</li>
-								<li class="sub-menu__item" temprop="item"><a class="sub-menu__link" href="#" itemprop="url">Подбор септика   </a>
-								</li>
-								<li class="sub-menu__item" temprop="item"><a class="sub-menu__link" href="#" itemprop="url">Акции </a>
-								</li>
-								<li class="sub-menu__item" temprop="item"><a class="sub-menu__link" href="#" itemprop="url"> О компании  </a>
-								</li>
-								<li class="sub-menu__item" temprop="item"><a class="sub-menu__link" href="#" itemprop="url"> Доставка и оплата </a>
-								</li>
-								<li class="sub-menu__item" temprop="item"><a class="sub-menu__link" href="#" itemprop="url"> Клиентам  </a>
-								</li>
-								<li class="sub-menu__item" temprop="item"><a class="sub-menu__link" href="#" itemprop="url"> Наши работы   </a>
-								</li>
-								<li class="sub-menu__item" temprop="item"><a class="sub-menu__link" href="#" itemprop="url">Контакты </a>
-								</li>
-							</ul>
-						</li>
-						<li class="navMenu__item" temprop="item" itemprop="url"><a class="navMenu__link" href="#" itemprop="url">Главная</a>
-						</li>
-						<li class="navMenu__item" temprop="item" itemprop="url"><a class="navMenu__link" href="#" itemprop="url">Услуги  </a>
-						</li>
-						<li class="navMenu__item" temprop="item" itemprop="url"><a class="navMenu__link" href="#" itemprop="url">Подбор септика   </a>
-						</li>
-						<li class="navMenu__item" temprop="item" itemprop="url"><a class="navMenu__link" href="#" itemprop="url">Акции </a>
-						</li>
-						<li class="navMenu__item" temprop="item" itemprop="url"><a class="navMenu__link" href="#" itemprop="url"> О компании  </a>
-						</li>
-						<li class="navMenu__item" temprop="item" itemprop="url"><a class="navMenu__link" href="#" itemprop="url"> Доставка и оплата </a>
-						</li>
-						<li class="navMenu__item" temprop="item" itemprop="url"><a class="navMenu__link" href="#" itemprop="url"> Клиентам  </a>
-						</li>
-						<li class="navMenu__item" temprop="item" itemprop="url"><a class="navMenu__link" href="#" itemprop="url"> Наши работы   </a>
-						</li>
-						<li class="navMenu__item" temprop="item" itemprop="url"><a class="navMenu__link" href="#" itemprop="url">Контакты </a>
-						</li>
-					</ul>
-					<div class="text-right"></div>
+				<div class="menu-mobile__inner"><a class="menu-mobile__logo" href="/"><img loading="lazy" src="img/@2x/logo.png" alt=""/></a>
+					<div class="navMenu">
+						<ul>
+							<li><a href="#">Услуги</a></li>
+							<li><a href="#">Команда</a></li>
+							<li><a href="#">Контакты</a></li>
+							<li><a href="#">Решения</a></li>
+						</ul>
+					</div>
+					<div class="menu-mobile__btn-cont"><a class="menu-mobile__btn" href="#">Связаться с нами</a>
+					</div>
 				</div>
 			</div>
 			<!--  мобильное меню-->
-			<!-- start header-->
-			<header class="header" id="header">
-			</header>
-			<!-- end header-->
+			<!--+header()-->
 			<!-- start top-nav-->
 			<div class="top-nav block-with-lazy">
 				<div class="container">
-					<div class="row">
-						<div class="col-auto d-lg-none">
-							<div class="toggle-menu-mobile toggle-menu-mobile--js"><span></span>
+					<div class="top-nav__box">
+						<div class="row align-items-center">
+							<div class="col"><a class="top-nav__logo" href="#"><img loading="lazy" src="img/@2x/logo.png" alt=""/></a>
 							</div>
-						</div>
-						<div class="col d-none d-lg-block">
-							<ul class="navMenu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-								<li class="navMenu__item navMenu__item--has-children" itemprop="item"><a class="navMenu__link" href="#" itemprop="url">О нас</a>
-									<ul class="sub-menu">
-										<li class="sub-menu__item" temprop="item"><a class="sub-menu__link" href="#" itemprop="url">Главная</a>
-										</li>
-										<li class="sub-menu__item" temprop="item"><a class="sub-menu__link" href="#" itemprop="url">Услуги  </a>
-										</li>
-										<li class="sub-menu__item" temprop="item"><a class="sub-menu__link" href="#" itemprop="url">Подбор септика   </a>
-										</li>
-										<li class="sub-menu__item" temprop="item"><a class="sub-menu__link" href="#" itemprop="url">Акции </a>
-										</li>
-										<li class="sub-menu__item" temprop="item"><a class="sub-menu__link" href="#" itemprop="url"> О компании  </a>
-										</li>
-										<li class="sub-menu__item" temprop="item"><a class="sub-menu__link" href="#" itemprop="url"> Доставка и оплата </a>
-										</li>
-										<li class="sub-menu__item" temprop="item"><a class="sub-menu__link" href="#" itemprop="url"> Клиентам  </a>
-										</li>
-										<li class="sub-menu__item" temprop="item"><a class="sub-menu__link" href="#" itemprop="url"> Наши работы   </a>
-										</li>
-										<li class="sub-menu__item" temprop="item"><a class="sub-menu__link" href="#" itemprop="url">Контакты </a>
-										</li>
+							<div class="col-auto d-none d-lg-block">
+								<div class="navMenu">
+									<ul>
+										<li><a href="#">Услуги</a></li>
+										<li><a href="#">Команда</a></li>
+										<li><a href="#">Контакты</a></li>
+										<li><a href="#">Решения</a></li>
 									</ul>
-								</li>
-								<li class="navMenu__item" temprop="item" itemprop="url"><a class="navMenu__link" href="#" itemprop="url">Главная</a>
-								</li>
-								<li class="navMenu__item" temprop="item" itemprop="url"><a class="navMenu__link" href="#" itemprop="url">Услуги  </a>
-								</li>
-								<li class="navMenu__item" temprop="item" itemprop="url"><a class="navMenu__link" href="#" itemprop="url">Подбор септика   </a>
-								</li>
-								<li class="navMenu__item" temprop="item" itemprop="url"><a class="navMenu__link" href="#" itemprop="url">Акции </a>
-								</li>
-								<li class="navMenu__item" temprop="item" itemprop="url"><a class="navMenu__link" href="#" itemprop="url"> О компании  </a>
-								</li>
-								<li class="navMenu__item" temprop="item" itemprop="url"><a class="navMenu__link" href="#" itemprop="url"> Доставка и оплата </a>
-								</li>
-								<li class="navMenu__item" temprop="item" itemprop="url"><a class="navMenu__link" href="#" itemprop="url"> Клиентам  </a>
-								</li>
-								<li class="navMenu__item" temprop="item" itemprop="url"><a class="navMenu__link" href="#" itemprop="url"> Наши работы   </a>
-								</li>
-								<li class="navMenu__item" temprop="item" itemprop="url"><a class="navMenu__link" href="#" itemprop="url">Контакты </a>
-								</li>
-							</ul>
+								</div>
+							</div>
+							<div class="col-auto d-none d-sm-block"><a class="top-nav__connect-btn" href="#">Связаться с нами</a>
+							</div>
+							<div class="col-auto d-lg-none">
+								<div class="toggle-menu-mobile toggle-menu-mobile--js"><span></span>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 			<!-- end top-nav-->
-			<div class="soc"><a class="soc__item" href="#" target="_blank">
-				<svg class="icon icon-fb ">
-					<use xlink:href="img/svg/sprite.svg#fb"></use>
-				</svg></a><a class="soc__item" href="#" target="_blank">
-				<svg class="icon icon-instagram ">
-					<use xlink:href="img/svg/sprite.svg#instagram"></use>
-				</svg></a><a class="soc__item" href="#" target="_blank">
-				<svg class="icon icon-telegram ">
-					<use xlink:href="img/svg/sprite.svg#telegram"></use>
-				</svg></a>
-			</div><a href=""></a>
-			<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="checkbox" type="checkbox"/><span class="custom-input__text form-check-label">text</span>
-			</label><img src="img/@2x/r.jpg" alt=""><img src="img/@2x/webp/r.webp" alt=""><img src="img/@2x/002-book.png" alt=""><img src="img/@2x/webp/002-book.webp" alt="">
-			<div class="tabs tabs--js opacity-50">
-				<div class="tabs__caption d-flex">
-					<div class="tabs__btn btn btn-warning active"> btn1
-					</div>
-					<div class="tabs__btn btn btn-warning">btn 2
-					</div>
-					<div class="tabs__btn btn btn-warning">btn 3
-					</div>
-					<div class="tabs__btn btn btn-warning">btn 4
-					</div>
-				</div>
-				<div class="tabs__wrap">
-					<div class="tabs__content active">content 1
-					</div>
-					<div class="tabs__content">content 2
-					</div>
-					<div class="tabs__content">content 3
-					</div>
-					<div class="tabs__content">content 4
-					</div>
-				</div>
-			</div>
-			<div class="tabs tabs--js">
-				<div class="tabs__caption d-flex">
-					<div class="tabs__btn btn btn-success active"> btn  2 1
-					</div>
-					<div class="tabs__btn btn btn-success">btn 2  2
-					</div>
-					<div class="tabs__btn btn btn-success">btn 2  3
-					</div>
-					<div class="tabs__btn btn btn-success">btn  2 4
-					</div>
-				</div>
-				<div class="tabs__wrap">
-					<div class="tabs__content active">content 1
-					</div>
-					<div class="tabs__content">content 2
-					</div>
-					<div class="tabs__content">content 3
-					</div>
-					<div class="tabs__content">content 4
-					</div>
-				</div>
-			</div>
-			<!-- start topLine-->
-			<section class="topLine section" id="topLine">
-				<div class="container">
-					<div class="section-title text-center">
-						<h2>topLine</h2>
-					</div>
-					<div class="row"></div>
-				</div>
-			</section>
-			<!-- end topLine-->
 			<!-- start headerBlock-->
 			<div class="headerBlock section" id="headerBlock">
+				<div class="headerBlock__bg headerBlock__bg--elipse">
+				</div>
+				<div class="headerBlock__bg headerBlock__bg--bot-line d-none d-sm-block"><img src="img/svg/hb-bot-line.svg	" alt=""/>
+				</div>
+				<div class="headerBlock__bg headerBlock__bg--right"><img src="img/@2x/headerBlock-bg3.png" alt=""/>
+				</div>
 				<div class="container">
-					<div class="section-title text-center">
-						<h2>headerBlock ds dfsdfdsfsd</h2>
+					<div class="row gy-5">
+						<div class="headerBlock__txt-col col-lg-6">
+							<div class="section-title">
+								<h1>Проекты<br/>для бизнеса<br/>и людей</h1>
+								<p> Мы предлагаем широкий спектр IT услуг с индивидуальным подходом и инновационными идеями для любой сферы бизнеса.</p>
+								<p>
+									Мы осуществляем комплексную разработку custom* it решений.
+									Высоконагруженных систем, решений для частного бизнеса (CRM, информационная безопасность).
+								</p>
+								<p>Отдельным направлением является разработка бренда включая разработку&nbsp;его коммуникативной и&nbsp;визуальной стратегии.</p>
+							</div><a class="headerBlock__btn" href="#">Начать сотрудничать</a>
+						</div>
+						<div class="headerBlock__partners-col col ms-lg-auto">
+							<div class="headerBlock__p-title">Клиенты и партнеры:
+							</div>
+							<div class="headerBlock__p-items row gy-3 gy-sm-0">
+								<div class="headerBlock__p-item col-6 col-sm-auto headerBlock__p-item headerBlock__p-item--1"><img loading="lazy" src="img/@2x/partners-1.png" alt=""/>
+								</div>
+								<div class="headerBlock__p-item col-6 col-sm-auto headerBlock__p-item headerBlock__p-item--2"><img loading="lazy" src="img/@2x/partners-2.png" alt=""/>
+								</div>
+								<div class="headerBlock__p-item col-6 col-sm-auto headerBlock__p-item headerBlock__p-item--3"><img loading="lazy" src="img/@2x/partners-3.png" alt=""/>
+								</div>
+								<div class="headerBlock__p-item col-6 col-sm-auto headerBlock__p-item headerBlock__p-item--4"><img loading="lazy" src="img/@2x/partners-4.png" alt=""/>
+								</div>
+								<div class="headerBlock__p-item col-6 col-sm-auto headerBlock__p-item headerBlock__p-item--5"><img loading="lazy" src="img/@2x/partners-5.png" alt=""/>
+								</div>
+								<div class="headerBlock__p-item col-6 col-sm-auto headerBlock__p-item headerBlock__p-item--6"><img loading="lazy" src="img/@2x/partners-6.png" alt=""/>
+								</div>
+							</div>
+						</div>
 					</div>
-					<div class="row"></div>
 				</div>
 			</div>
 			<!-- end headerBlock-->
-			<!-- start sForm-->
-			<section class="sForm section" id="sForm">
+			<!-- start sCards-->
+			<section class="sCards section" id="sCards">
 				<div class="container">
-					<div class="section-title text-center">
-						<h2>sForm</h2>
+					<div class="section-title">
+						<h2>Ключевые компетенции</h2>
 					</div>
-					<div class="row"></div>
+					<div class="sCards__row row gy-4">
+						<div class="col-sm-6 col-lg-4"><a class="sCards__item" href="#"><span class="sCards__title"><span class="h3">Веб<br/>Разработка</span></span><span class="sCards__descr">Мы занимаемся разработкой высокотехнологичных порталов и интегрированных веб–систем, </span></a>
+						</div>
+						<div class="col-sm-6 col-lg-4"><a class="sCards__item" href="#"><span class="sCards__title"><span class="h3">Корпоративные<br/>системы</span></span><span class="sCards__descr">Мы занимаемся разработкой высокотехнологичных порталов и интегрированных веб–систем, </span></a>
+						</div>
+						<div class="col-sm-6 col-lg-4"><a class="sCards__item" href="#"><span class="sCards__title"><span class="h3">Дизайн и<br/>3д моделлинг</span></span><span class="sCards__descr">Мы занимаемся разработкой высокотехнологичных порталов и интегрированных веб–систем, </span></a>
+						</div>
+						<div class="col-sm-6 col-lg-4"><a class="sCards__item" href="#"><span class="sCards__title"><span class="h3">Мобильные<br/>приложения</span></span><span class="sCards__descr">Мы занимаемся разработкой высокотехнологичных порталов и интегрированных веб–систем, </span></a>
+						</div>
+						<div class="col-sm-6 col-lg-4"><a class="sCards__item" href="#"><span class="sCards__title"><span class="h3">Техническое<br/>сопровождение</span></span><span class="sCards__descr">Мы занимаемся разработкой высокотехнологичных порталов и интегрированных веб–систем, </span></a>
+						</div>
+						<div class="col-sm-6 col-lg-4"><a class="sCards__item" href="#"><span class="sCards__title"><span class="h3">Индивидуальные<br/>решения</span></span><span class="sCards__descr">Мы занимаемся разработкой высокотехнологичных порталов и интегрированных веб–систем, </span></a>
+						</div>
+					</div>
 				</div>
 			</section>
-			<!-- end sForm-->
-			<!-- start sContact-->
-			<section class="sContact section" id="sContact">
+			<!-- end sCards-->
+			<!-- start sTabs-->
+			<div class="sTabs section" id="sTabs">
+				<div class="sTabs__bg sTabs__bg--top"><img loading="lazy" src="img/svg/tabs-top-l-bg.svg" alt=""/>
+				</div>
+				<div class="sTabs__bg sTabs__bg--bot"><img loading="lazy" src="img/svg/tabs-bot-r-line.svg" alt=""/>
+				</div>
+				<div class="sTabs__bg sTabs__bg--b-mid"><img loading="lazy" src="img/svg/tabs-bot-mid-bg.svg" alt=""/>
+				</div>
 				<div class="container">
-					<div class="section-title text-center">
-						<h2>sContact</h2>
+					<div class="sTabs__row row align-items-center gy-4">
+						<div class="col-lg-8 tabs-slider-parent-js">
+							<div class="tabs">
+								<div class="tabs__caption swiper-container tabs-slider-js">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide">
+											<div class="tabs__btn active">О нас
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div class="tabs__btn">Как мы работаем
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div class="tabs__btn">Технологии
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div class="tabs__btn">Решения
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="tabs__wrap">
+									<div class="tabs__content active">РусТехнолоджи предоставляет услуги полного цикла по разработке, внедрению и сопровождению IT-решений. Мы разрабатываем функциональные веб-сайты, мобильные приложения, проектируем правильные интерфейсы, реализуем и автоматизируем сложные бизнес-процессы, и делаем это все красиво.
+									</div>
+									<div class="tabs__content">2
+									</div>
+									<div class="tabs__content">3
+									</div>
+									<div class="tabs__content">4
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="sTabs__img"><img loading="lazy" src="img/svg/stabs-img.svg" alt=""/>
+							</div>
+						</div>
 					</div>
-					<div class="row"></div>
+				</div>
+			</div>
+			<!-- end sTabs-->
+			<!-- start sProjects-->
+			<section class="sProjects section" id="sProjects">
+				<div class="sProjects__ball">
+				</div>
+				<div class="sProjects__container container">
+					<div class="section-title">
+						<h2>Проекты</h2>
+					</div>
+					<div class="tabs">
+						<div class="tabs__caption swiper-container sProject-tabs-slider-js">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<div class="tabs__btn active">worldskill
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="tabs__btn">РОстелеком
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="tabs__btn">Росбанк
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="tabs__btn">Компания
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="tabs__btn">Еще компания
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tabs__wrap">
+							<div class="tabs__content active">
+								<div class="sProjects-box">
+									<div class="sProjects-box__row row gy-5">
+										<div class="col-lg-auto">
+											<div class="sProjects-box__img"><img loading="lazy" src="img/@2x/sProjects-img.png" alt=""/>
+											</div>
+										</div>
+										<div class="col-lg">
+											<h3 class="sProjects-box__sub-title">Worldskills
+											</h3>
+											<div class="sProjects-box__descr-txt">Агентство развития профессионального мастерства
+											</div>
+											<div class="sProjects-box__pills-row row gy-2">
+												<div class="col-auto"><a class="sProjects-box__btn" href="#">Страхование</a>
+												</div>
+												<div class="col-auto"><a class="sProjects-box__btn" href="#">Мобильное приложение</a>
+												</div>
+											</div>
+											<div class="sProjects-box__descr-row row">
+												<div class="sProjects-box__col col-lg-6">Предоставляет услуги полного цикла по разработке, внедрению и сопровождению IT-решений.
+												</div>
+												<div class="sProjects-box__col col-lg-6">Предоставляет услуги полного цикла по разработке, внедрению и сопровождени
+												</div>
+												<div class="sProjects-box__col col-lg-6">Предоставляет услуги полного цикла по разработке, внедрени
+												</div>
+												<div class="sProjects-box__col col-lg-6">Предоставляет услуги полного цикла по разработке,
+												</div>
+											</div><a class="sProjects-box__learn-more-btn" href="#">Узнать больше</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="tabs__content">2
+							</div>
+							<div class="tabs__content">3
+							</div>
+							<div class="tabs__content">4
+							</div>
+						</div>
+					</div>
 				</div>
 			</section>
-			<!-- end sContact-->
-			<footer class="footer"></footer>
+			<!-- end sProjects-->
+			<!-- start sDesisions-->
+			<section class="sDesisions section" id="sDesisions">
+				<div class="sDesisions__bg sDesisions__bg--top"><img loading="lazy" src="img/svg/desisicons-triangle.svg" alt=""/>
+				</div>
+				<div class="sDesisions__container container">
+					<div class="sDesisions__big-bg"><img loading="lazy" src="img/svg/desisions-bg.svg" alt=""/>
+					</div>
+					<div class="section-title">
+						<h2>Решения</h2>
+					</div>
+					<div class="sDesisions__row row">
+						<div class="sDesisions__col col-6">
+							<div class="sDesisions__txt-box d-none d-lg-block"><a class="sDesisions__title" href="#">Инвентаризация</a>
+								<div class="sDesisions__txt">РусТехнолоджи предоставляет услуги полного цикла по разработке, внедрению и сопровождению IT-решений.
+								</div>
+							</div><a class="sDesisions__img" href="#"><img loading="lazy" src="img/@2x/desisions-img-1.jpg" alt=""/></a>
+						</div>
+						<div class="sDesisions__col col-6">
+							<div class="sDesisions__txt-box d-none d-lg-block"><a class="sDesisions__title" href="#">CRM - система</a>
+								<div class="sDesisions__txt">РусТехнолоджи предоставляет услуги полного цикла по разработке, внедрению и сопровождению IT-решений.
+								</div>
+							</div><a class="sDesisions__img" href="#"><img loading="lazy" src="img/@2x/desisions-img-2.png" alt=""/></a>
+						</div>
+						<div class="sDesisions__col col-6">
+							<div class="sDesisions__txt-box d-none d-lg-block"><a class="sDesisions__title" href="#">ЖКХ </a>
+								<div class="sDesisions__txt">РусТехнолоджи предоставляет услуги полного цикла по разработке, внедрению и сопровождению IT-решений.
+								</div>
+							</div><a class="sDesisions__img" href="#"><img loading="lazy" src="img/@2x/desisions-img-3.jpg" alt=""/></a>
+						</div>
+						<div class="sDesisions__col col-6">
+							<div class="sDesisions__txt-box d-none d-lg-block"><a class="sDesisions__title" href="#">Система оценки чемпионатов</a>
+								<div class="sDesisions__txt">РусТехнолоджи предоставляет услуги полного цикла по разработке, внедрению и сопровождению IT-решений.
+								</div>
+							</div><a class="sDesisions__img" href="#"><img loading="lazy" src="img/@2x/desisions-img-4.png" alt=""/></a>
+						</div>
+						<div class="col-md-6 d-lg-none">
+							<div class="sDesisions__txt-box">
+								<div class="sDesisions__title">Инвентаризация
+								</div>
+								<div class="sDesisions__txt">РусТехнолоджи предоставляет услуги полного цикла по разработке, внедрению и сопровождению IT-решений.
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 d-lg-none">
+							<div class="sDesisions__txt-box">
+								<div class="sDesisions__title">CRM - система
+								</div>
+								<div class="sDesisions__txt">РусТехнолоджи предоставляет услуги полного цикла по разработке, внедрению и сопровождению IT-решений.
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 d-lg-none">
+							<div class="sDesisions__txt-box">
+								<div class="sDesisions__title">ЖКХ
+								</div>
+								<div class="sDesisions__txt">РусТехнолоджи предоставляет услуги полного цикла по разработке, внедрению и сопровождению IT-решений.
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 d-lg-none">
+							<div class="sDesisions__txt-box">
+								<div class="sDesisions__title">Система оценки чемпионатов
+								</div>
+								<div class="sDesisions__txt">РусТехнолоджи предоставляет услуги полного цикла по разработке, внедрению и сопровождению IT-решений.
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- end sDesisions-->
+			<!-- start sColor-->
+			<section class="sColor section" id="sColor">
+				<div class="sColor__bg sColor__bg--left d-none d-base-block"><img loading="lazy" src="img/svg/scolor-left.svg" alt=""/>
+				</div>
+				<div class="sColor__bg sColor__bg--right d-none d-xl-block"><img loading="lazy" src="img/svg/scolor-right-sq.svg" alt=""/>
+				</div>
+				<div class="container">
+					<div class="sColor__descr text-center">РусТехнолоджи предоставляет услуги полного цикла по разработке, внедрению и сопровождению IT-решений. Мы разрабатываем функциональные веб-сайты, мобильные приложения, проектируем правильные интерфейсы, реализуем и автоматизируем сложные бизнес-процессы, и делаем это все красиво.
+					</div>
+					<div class="sColor__row row">
+						<div class="sColor__col sColor__col--primary col-md-6">
+							<h2 class="sColor__title">Бизнес<br/>столкнулся<br/>с проблемой?
+							</h2>
+							<div class="sColor__txt">Когда на нас надвигается новая технология, тот, кто не стал частью парового катка, становится частью мостовой.
+							</div><a class="sColor__btn sColor__btn--dark" href="#">Найти решения</a>
+						</div>
+						<div class="sColor__col sColor__col--dark col-md-6">
+							<h2 class="sColor__title">Вместе<br/>мы можем<br/>больше
+							</h2>
+							<div class="sColor__txt">
+								Собраться вместе – это начало. Оставаться вместе – это прогресс.
+								<br/>Работать вместе – это успех.
+							</div><a class="sColor__btn sColor__btn--primary" href="#">Запартнериться =)</a>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- end sColor-->
+			<footer class="footer">
+				<div class="container">
+					<div class="footer__row row gy-4">
+						<div class="col-6 col-sm-4 col-xl-3">
+							<div class="footer__title">Клиентам
+							</div>
+							<div class="footer__menu">
+								<ul>
+									<li><a href="#">Услуги</a></li>
+									<li><a href="#">Кейсы</a></li>
+									<li><a href="#">Блог</a></li>
+									<li><a href="#">Контакты</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-6 col-sm-4 col-xl-3">
+							<div class="footer__title">Решения
+							</div>
+							<div class="footer__menu">
+								<ul>
+									<li><a href="#">Сайты</a></li>
+									<li><a href="#">Мобильные приложения</a></li>
+									<li><a href="#">Веб приложения</a></li>
+									<li><a href="#">Еще тип решения</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-6 col-sm-4 col-xl-3">
+							<div class="footer__title">Услуги
+							</div>
+							<div class="footer__menu">
+								<ul>
+									<li><a href="#">Услуга</a></li>
+									<li><a href="#">Еще услуга</a></li>
+									<li><a href="#">Снова услуга</a></li>
+									<li><a href="#">Услуга</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="footer__contacts-row row">
+						<div class="col-lg">
+							<div class="footer__city">Москва, Московская облать
+							</div>
+							<div class="footer__street">ул. Дзержинского, подъезд 2, этаж 3, офис 45
+							</div>
+						</div>
+						<div class="col-lg-auto"><a class="footer__c-link footer__c-link--mail" href="mailto:sample@sample.com">sample@sample.com</a>
+						</div>
+						<div class="col-lg-auto"><a class="footer__c-link footer__c-link--tell" href="tel:88005686688">8 800 568 66 88</a>
+						</div>
+					</div>
+					<div class="footer__lower-row gy-3 row align-items-center">
+						<div class="col-lg text-center text-lg-start">
+							<div class="footer__all-rights">© 2020. Все права защищены
+							</div>
+						</div>
+						<div class="col-sm col-lg-auto text-center text-sm-start"><a class="footer__lower-link" href="#">Политика конфиденциальности</a>
+						</div>
+						<div class="col-sm-auto text-center text-sm-start"><a class="footer__lower-link" href="#">Пользовательское соглашение</a>
+						</div>
+					</div>
+				</div>
+			</footer>
 		</div>
 		<!--  start modals-->
 		<div class="modal-win" id="modal-call" style="display: none">

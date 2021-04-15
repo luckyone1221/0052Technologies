@@ -1,0 +1,121 @@
+// start .sColor
+.sColor {
+	@include media-breakpoint-up(xl){
+		--sPB: #{rem(142px)};
+	}
+
+	position: relative;
+	z-index: 1;
+	&__bg{
+		position: absolute;
+		z-index: -1;
+
+		&--left{
+			left: 0;
+			top: -71px;
+		}
+		&--right{
+			right: 0;
+			top: -243px;
+		}
+	}
+
+	&__descr{
+		line-height: 1.6;
+		padding-bottom: rem(40);
+		font-size: rem(18);
+		@include media-breakpoint-up(lg){
+			padding-bottom: rem(107);
+			font-size: rem(20);
+		}
+
+		@include media-breakpoint-up(xxl){
+			max-width: 1264px;
+			margin: 0 auto;
+		}
+	}
+	&__row{
+		@include roww(0);
+	}
+	&__col{
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+
+		padding: rem(40px) rem(30px);
+		@include media-breakpoint-up(sm){
+			padding: rem(40px);
+		}
+		@include media-breakpoint-up(xl){
+			padding: rem(60px);
+		}
+		@include media-breakpoint-up(xxl){
+			padding: rem(72px);
+		}
+
+		background-repeat: no-repeat;
+
+		background-size: 100px auto;
+		@include media-breakpoint-up(lg){
+			background-size: 160px auto;
+		}
+		@include media-breakpoint-up(xxl){
+			background-size: auto;
+		}
+		&--primary{
+			background-color: $primary;
+			color: $dark;
+
+			background-image: url(../img/@2x/color-dark.png);
+			background-position-y: bottom;
+
+			background-position-x: calc(100% - 10px);
+			@include media-breakpoint-up(xl){
+				background-position-x: calc(100% - 43px);
+			}
+		}
+		&--dark{
+			background-color: $dark;
+			color: $white;
+
+			background-image: url(../img/svg/color-primary.svg);
+			background-position-y: top;
+			background-position-x: calc(100% - 0px);
+		}
+	}
+	&__title{
+		margin-bottom: rem(25);
+		@include media-breakpoint-up(xl){
+			font-size: rem(50);
+			margin-bottom: rem(34);
+		}
+		line-height: 1;
+	}
+	&__txt{
+		padding-bottom: rem(30);
+		font-size: rem(18);
+		@include media-breakpoint-up(xl){
+			padding-bottom: rem(50);
+			font-size: rem(20);
+		}
+		@include media-breakpoint-up(xxl){
+			padding-bottom: 80px;
+		}
+	}
+	&__btn{
+		margin-top: auto;
+		@extend .btn;
+		min-width: 224px;
+
+		&--primary{
+			@extend .btn-primary;
+			color:$dark!important;
+		}
+		&--dark{
+			@extend .btn-dark;
+			color:$primary!important;
+		}
+	}
+	&__{}
+	&__{}
+} // end.sColor

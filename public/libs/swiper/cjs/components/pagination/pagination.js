@@ -130,8 +130,8 @@ var Pagination = {
     }
 
     if (params.type === 'fraction') {
-      $el.find("." + params.currentClass).text(params.formatFractionCurrent(current + 1));
-      $el.find("." + params.totalClass).text(params.formatFractionTotal(total));
+      $el.find((0, _utils.classesToSelector)(params.currentClass)).text(params.formatFractionCurrent(current + 1));
+      $el.find((0, _utils.classesToSelector)(params.totalClass)).text(params.formatFractionTotal(total));
     }
 
     if (params.type === 'progressbar') {
@@ -153,7 +153,7 @@ var Pagination = {
         scaleY = scale;
       }
 
-      $el.find("." + params.progressbarFillClass).transform("translate3d(0,0,0) scaleX(" + scaleX + ") scaleY(" + scaleY + ")").transition(swiper.params.speed);
+      $el.find((0, _utils.classesToSelector)(params.progressbarFillClass)).transform("translate3d(0,0,0) scaleX(" + scaleX + ") scaleY(" + scaleY + ")").transition(swiper.params.speed);
     }
 
     if (params.type === 'custom' && params.renderCustom) {
@@ -190,7 +190,7 @@ var Pagination = {
       }
 
       $el.html(paginationHTML);
-      swiper.pagination.bullets = $el.find("." + params.bulletClass.replace(/ /g, '.'));
+      swiper.pagination.bullets = $el.find((0, _utils.classesToSelector)(params.bulletClass));
     }
 
     if (params.type === 'fraction') {
@@ -248,7 +248,7 @@ var Pagination = {
     }
 
     if (params.clickable) {
-      $el.on('click', "." + params.bulletClass.replace(/ /g, '.'), function onClick(e) {
+      $el.on('click', (0, _utils.classesToSelector)(params.bulletClass), function onClick(e) {
         e.preventDefault();
         var index = (0, _dom.default)(this).index() * swiper.params.slidesPerGroup;
         if (swiper.params.loop) index += swiper.loopedSlides;
@@ -271,7 +271,7 @@ var Pagination = {
     if (swiper.pagination.bullets) swiper.pagination.bullets.removeClass(params.bulletActiveClass);
 
     if (params.clickable) {
-      $el.off('click', "." + params.bulletClass.replace(/ /g, '.'));
+      $el.off('click', (0, _utils.classesToSelector)(params.bulletClass));
     }
   }
 };

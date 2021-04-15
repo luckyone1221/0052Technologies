@@ -1,7 +1,7 @@
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 import $ from '../../utils/dom';
-import { extend, bindModuleMethods } from '../../utils/utils';
+import { extend, bindModuleMethods, classesToSelector } from '../../utils/utils';
 var Pagination = {
   update: function update() {
     // Render || Update Pagination bullets/items
@@ -121,8 +121,8 @@ var Pagination = {
     }
 
     if (params.type === 'fraction') {
-      $el.find("." + params.currentClass).text(params.formatFractionCurrent(current + 1));
-      $el.find("." + params.totalClass).text(params.formatFractionTotal(total));
+      $el.find(classesToSelector(params.currentClass)).text(params.formatFractionCurrent(current + 1));
+      $el.find(classesToSelector(params.totalClass)).text(params.formatFractionTotal(total));
     }
 
     if (params.type === 'progressbar') {
@@ -144,7 +144,7 @@ var Pagination = {
         scaleY = scale;
       }
 
-      $el.find("." + params.progressbarFillClass).transform("translate3d(0,0,0) scaleX(" + scaleX + ") scaleY(" + scaleY + ")").transition(swiper.params.speed);
+      $el.find(classesToSelector(params.progressbarFillClass)).transform("translate3d(0,0,0) scaleX(" + scaleX + ") scaleY(" + scaleY + ")").transition(swiper.params.speed);
     }
 
     if (params.type === 'custom' && params.renderCustom) {
@@ -181,7 +181,7 @@ var Pagination = {
       }
 
       $el.html(paginationHTML);
-      swiper.pagination.bullets = $el.find("." + params.bulletClass.replace(/ /g, '.'));
+      swiper.pagination.bullets = $el.find(classesToSelector(params.bulletClass));
     }
 
     if (params.type === 'fraction') {
@@ -239,7 +239,7 @@ var Pagination = {
     }
 
     if (params.clickable) {
-      $el.on('click', "." + params.bulletClass.replace(/ /g, '.'), function onClick(e) {
+      $el.on('click', classesToSelector(params.bulletClass), function onClick(e) {
         e.preventDefault();
         var index = $(this).index() * swiper.params.slidesPerGroup;
         if (swiper.params.loop) index += swiper.loopedSlides;
@@ -262,7 +262,7 @@ var Pagination = {
     if (swiper.pagination.bullets) swiper.pagination.bullets.removeClass(params.bulletActiveClass);
 
     if (params.clickable) {
-      $el.off('click', "." + params.bulletClass.replace(/ /g, '.'));
+      $el.off('click', classesToSelector(params.bulletClass));
     }
   }
 };

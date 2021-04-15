@@ -1,15 +1,14 @@
-$default-font: "roboto";
-// $file-form: ($file-formats: woff2 woff ttf);
+$default-font: "Gotham Pro";
+$mono: 'Montserrat';
 $addr: '../fonts/';
 $file-format: woff2;
 
-
 // If font from googlefont, next lines remove
+@include font-face ($default-font, $addr + "GothamPro/GothamPro", 400, $file-formats: $file-format);
 
-@include font-face ($default-font, $addr + "Roboto-Regular/Roboto-Regular", $file-formats: $file-format);
-@include font-face ($default-font, $addr + "Roboto-Bold/Roboto-Bold", bold, $file-formats: $file-format);
-@include font-face ($default-font, $addr + "Roboto-Medium/Roboto-Medium", 500, $file-formats: $file-format);
-@include font-face ($default-font, $addr + "Roboto-Black/Roboto-Black", 900, $file-formats: $file-format);
+@include font-face ($default-font, $addr + "GothamPro-Bold/GothamPro-Bold", 700, $file-formats: $file-format);
+@include font-face ($default-font, $addr + "GothamPro-Black/GothamPro-Black", 900, $file-formats: $file-format);
+//@include font-face ($default-font, $addr + "/", 900, $file-formats: $file-format);
 
 // font-weight helper:
 // 100 Thin
