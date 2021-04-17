@@ -11,7 +11,8 @@
 
 	position: relative;
 	z-index: 2;
-	background: linear-gradient(245.99deg, #0F0B31 12.72%, #26233D 70.04%, #2F2C41 89.15%);
+  background-color: $dark-blue;
+	background-image: linear-gradient(245deg, #0F0B31 13%, #26233D 70%, #2F2C41 89%);
 	color: $white;
 	&__ball-cont{
 		position: absolute;
