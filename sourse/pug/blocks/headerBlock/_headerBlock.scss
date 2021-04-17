@@ -102,11 +102,14 @@
 	}
 	//partners-col
 	&__partners-col{
+		//@include media-breakpoint-up(md){
+		//	max-width: rem(491);
+		//	padding-top: rem(18px);
+		//}
+
 		@include media-breakpoint-up(md){
-			max-width: rem(491);
 			padding-top: rem(18px);
 		}
-
 		@include media-breakpoint-up(xl){
 			max-width: 491px;
 		}
@@ -122,6 +125,15 @@
 		@include media-breakpoint-up(sm){
 			@include roww(0);
 		}
+
+		@include media-breakpoint-up(md){
+			max-width: 491px;
+			margin: 0 auto;
+		}
+		@include media-breakpoint-up(xl){
+			margin: 0;
+		}
+
 	}
 	&__p-item{
 		@include media-breakpoint-down(sm){

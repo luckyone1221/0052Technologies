@@ -83,12 +83,12 @@ $h: em(2);
 	// left: 0;
 	right: 0;
 	&:not(.active){
-		transform: translate3d(120%, 0,0);
+		//transform: translate3d(120%, 0,0);
+		right: -120vw;
 		opacity: 0;
-
 	}
-	@include mt(.6);
-	will-change: transform;
+	@include mt(.6s);
+	//will-change: transform;
 
 	&__inner {
 		background-color: $white;

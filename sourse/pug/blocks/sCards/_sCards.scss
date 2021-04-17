@@ -13,6 +13,31 @@
 	z-index: 2;
 	background: linear-gradient(245.99deg, #0F0B31 12.72%, #26233D 70.04%, #2F2C41 89.15%);
 	color: $white;
+	&__ball-cont{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+	}
+	&__ball{
+		position: absolute;
+		right: rem(45/2);
+		bottom: rem(-512/2);
+		width: rem(870/2);
+		height: rem(865/2);
+		@include media-breakpoint-up(xl){
+			right: rem(45);
+			bottom: rem(-512);
+			width: rem(870);
+			height: rem(865);
+		}
+
+		background: $primary;
+		opacity: 0.3;
+		filter: blur(500px);
+	}
 
 	&__row{
 		@include media-breakpoint-up(sm){

@@ -1,11 +1,12 @@
 .top-nav {
 	position: fixed;
-	z-index: 990;
+	z-index: 900;
 	width: 100%;
 	top: 0;
 	left: 0;
 
-	@include mt();
+	//	@include mt();
+	transition: box-shadow .3s ease-in-out, padding .3s ease-in-out;
 	--box-bb-col: #{$gray-110};
 	&.fixed{
 		background: $white;

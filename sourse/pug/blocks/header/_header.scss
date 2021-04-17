@@ -1,4 +1,8 @@
 // start .header
 .header {
-	padding-top: var(--header-height);
+	//padding-top: var(--header-height)!important;
+	padding-top: 82px;
+	@include media-breakpoint-up(xxl){
+		padding-top: 98px;
+	}
 } // end.header
