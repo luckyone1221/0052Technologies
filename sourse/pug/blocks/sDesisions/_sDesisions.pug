@@ -1,7 +1,7 @@
 mixin sDesisions(data)
 	// start sDesisions
 	+b.SECTION.sDesisions.section#sDesisions&attributes(attributes)
-		+e.bg--top
+		+e.bg--top.slideInRight.wow(data-wow-duration='.4s' data-wow-delay='.3s')
 			img(loading="lazy" src="img/svg/desisicons-triangle.svg" alt="")
 		+e.container.container.fadeIn.wow(data-wow-duration='.4s' data-wow-delay='.3s')
 			+e.big-bg

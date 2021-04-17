@@ -1,9 +1,9 @@
 mixin sTabs(data)
 	// start sTabs
 	+b.sTabs.section#sTabs&attributes(attributes)
-		+e.bg--top
+		+e.bg--top.slideInLeft.wow(data-wow-duration='.4s' data-wow-delay='.3s')
 			img(loading="lazy" src='img/svg/tabs-top-l-bg.svg' alt="")
-		+e.bg--bot
+		+e.bg--bot.slideInRight.wow(data-wow-duration='.4s' data-wow-delay='.3s')
 			img(loading="lazy" src='img/svg/tabs-bot-r-line.svg' alt="")
 		+e.bg--b-mid
 			img(loading="lazy" src='img/svg/tabs-bot-mid-bg.svg' alt="")
