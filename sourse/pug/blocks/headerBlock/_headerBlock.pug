@@ -25,14 +25,14 @@ mixin headerBlock()
 				+e.partners-col.col-lg.ms-lg-auto
 					+e.p-title Клиенты и партнеры:
 					+e.p-items.row.gy-3.gy-sm-0
-						+pItem(1)
-						+pItem(2)
-						+pItem(3)
-						+pItem(4)
-						+pItem(5)
-						+pItem(6)
+						+pItem(1, '200')
+						+pItem(2, '400')
+						+pItem(3, '600')
+						+pItem(4, '800')
+						+pItem(5, '1000')
+						+pItem(6, '1200')
 	// end headerBlock
 
-mixin pItem(imgNum)
-	+e.p-item.partenrs-item-js.col-6.col-sm-auto(class=`headerBlock__p-item--${imgNum}`)
+mixin pItem(imgNum, delay)
+	+e.p-item.partenrs-item-js.wow.fadeIn.col-6.col-sm-auto(class=`headerBlock__p-item--${imgNum}` data-wow-duration='0.6s' data-wow-delay=`${delay}ms`)
 		img(loading="lazy" src=`img/@2x/partners-${imgNum}.png` alt="")

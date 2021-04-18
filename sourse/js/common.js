@@ -134,8 +134,10 @@ function eventHandler() {
 		whenResize();
 
 	}, { passive: true });
-
 	whenResize();
+	window.setTimeout(function (){
+		whenResize();
+	}, 100);
 	// modal window
 
 	//luckyone js
@@ -178,29 +180,10 @@ function eventHandler() {
 
 	});
 	//wow js
-	if (window.matchMedia("(min-width: 1200px)").matches){
-		let dur = .6;
-		let delay = 200;
-		$('.partenrs-item-js').each(function () {
-			$(this).addClass("wow fadeIn");
-			$(this).attr("data-wow-duration", dur + 's');
-			$(this).attr("data-wow-delay",	delay + 'ms');
-			delay+= 200;
-		});
-		delay = 200;
-		$('.sCards-item-js').each(function () {
-			$(this).addClass("wow fadeIn");
-			$(this).attr("data-wow-duration", dur + 's');
-			$(this).attr("data-wow-delay",	delay + 'ms');
-			delay+= 200;
-		});
-
-
-		let wow = new WOW({
-			mobile: false
-		});
-		wow.init();
-	}
+	let wow = new WOW({
+		mobile: false
+	});
+	wow.init();
 	//end luckyone js
 };
 if (document.readyState !== 'loading') {
