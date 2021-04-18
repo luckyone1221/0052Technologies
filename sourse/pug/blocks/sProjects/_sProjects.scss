@@ -18,12 +18,12 @@
 		width: rem(865);
 		height: rem(755);
 
-		background: $warning;
-		opacity: 0.2;
-		@include media-breakpoint-up(xl){
-			opacity: 0.3;
-		}
-		filter: blur(500px);
+		//background: $warning;
+		//opacity: 0.2;
+		//@include media-breakpoint-up(xl){
+		//	opacity: 0.3;
+		//}
+		//filter: blur(500px);
 
 		left: rem(45);
 		top: rem(516);
