@@ -25,6 +25,8 @@ mixin desisionItem(title, imgNum)
 			+e.title(href='#')=title
 			+e.txt РусТехнолоджи предоставляет услуги полного цикла по разработке, внедрению и сопровождению IT-решений.
 		+e.img(href="#")
+			+pic(`desisions-img-${imgNum}`)
+		//-+e.img(href="#")
 			img(loading="lazy" src=`img/@2x/desisions-img-${imgNum}` alt="")
 
 mixin desisionSmItem(title)
