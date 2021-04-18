@@ -8,10 +8,16 @@
 	//	@include mt();
 	transition: box-shadow .3s ease-in-out, padding .3s ease-in-out;
 	--box-bb-col: #{$gray-110};
+	border-bottom: 1px solid transparent;
+
+	background: $white;
+	@include media-breakpoint-up(xl){
+		background: transparent;
+	}
 	&.fixed{
 		background: $white;
 		border-bottom: 1px solid $gray-110;
-		box-shadow: 0 0  10px 0 rgba($dark, .1);
+		box-shadow: 0 0 10px 0 rgba($dark, .1);
 		--box-bb-col: transparent;
 	}
 
