@@ -24,6 +24,10 @@
 		//	opacity: 0.3;
 		//}
 		//filter: blur(500px);
+		background: radial-gradient(50% 50% at 50% 50%, $primary 0%, transparent 100%);
+		opacity: 0.3;
+		filter: blur(5px);
+		border-radius: 50%;
 
 		left: rem(45);
 		top: rem(516);

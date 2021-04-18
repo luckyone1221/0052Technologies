@@ -17,9 +17,10 @@
 
 			width: rem(860px);
 			height: rem(460);
-			//background: $dark;
-			//opacity: 0.45;
-			//filter: blur(500px);
+			background: radial-gradient(50% 50% at 50% 50%, $dark 0%, transparent 100%);
+			opacity: 0.31;
+			filter: blur(5px);
+			border-radius: 50%;
 		}
 
 		&--bot-line{
