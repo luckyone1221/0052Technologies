@@ -73,7 +73,11 @@ function eventHandler() {
 	}
 
 	function setFixedClass() {
-		window.scrollY > 0 ? topNav.classList.add('fixed') : topNav.classList.remove('fixed');
+		if (window.scrollY > 0) {
+			topNav.classList.add('fixed');
+		} else {
+			topNav.classList.remove('fixed');
+		}
 	} // modal window
 	//luckyone js
 	//menu js
