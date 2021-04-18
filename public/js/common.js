@@ -1,72 +1,6 @@
 "use strict";
 
-var div = document.createElement('div');
-div.style.overflowY = 'scroll';
-div.style.width = '50px';
-div.style.height = '50px'; // мы должны вставить элемент в документ, иначе размеры будут равны 0
-
-document.body.append(div);
-var scrollWidth = div.offsetWidth - div.clientWidth;
-div.remove();
 var JSCCommon = {
-	btnToggleMenuMobile: [].slice.call(document.querySelectorAll(".toggle-menu-mobile--js")),
-	menuMobile: document.querySelector(".menu-mobile--js"),
-	menuMobileLink: [].slice.call(document.querySelectorAll(".menu-mobile--js ul li a")),
-	// /modalCall
-	toggleMenu: function toggleMenu() {
-		var toggle = this.btnToggleMenuMobile;
-		var menu = this.menuMobile;
-		document.addEventListener("click", function (event) {
-			var toggleEv = event.target.closest(".toggle-menu-mobile--js");
-			if (!toggleEv) return;
-			toggle.forEach(function (el) {
-				return el.classList.toggle("on");
-			});
-			menu.classList.toggle("active");
-			[document.body, document.querySelector('html')].forEach(function (el) {
-				return el.classList.toggle("fixed");
-			});
-			document.querySelector("html").style.marginRight = scrollWidth + 'px';
-		}, {
-			passive: true
-		});
-	},
-	closeMenu: function closeMenu() {
-		var menu = this.menuMobile;
-		if (!menu) return;
-
-		if (menu.classList.contains("active")) {
-			this.btnToggleMenuMobile.forEach(function (element) {
-				return element.classList.remove("on");
-			});
-			this.menuMobile.classList.remove("active");
-			[document.body, document.querySelector('html')].forEach(function (el) {
-				return el.classList.remove("fixed");
-			});
-			document.querySelector("html").style.marginRight = null;
-		}
-	},
-	mobileMenu: function mobileMenu() {
-		var _this = this;
-
-		if (!this.menuMobileLink) return;
-		this.toggleMenu();
-		document.addEventListener('mouseup', function (event) {
-			var container = event.target.closest(".menu-mobile--js.active"); // (1)
-
-			var link = event.target.closest(".navMenu__link"); // (1)
-
-			if (!container || link) _this.closeMenu();
-		}, {
-			passive: true
-		});
-		window.addEventListener('resize', function () {
-			if (window.matchMedia("(min-width: 992px)").matches) _this.closeMenu();
-		}, {
-			passive: true
-		});
-	},
-	// /mobileMenu
 	// tabs  .
 	tabscostume: function tabscostume(tab) {
 		var tabs = {
@@ -90,15 +24,6 @@ var JSCCommon = {
 		});
 	},
 	// /tabs
-	inputMask: function inputMask() {
-		// mask for input
-		var InputTel = [].slice.call(document.querySelectorAll('input[type="tel"]'));
-		InputTel.forEach(function (element) {
-			return element.setAttribute("pattern", "[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}");
-		});
-		Inputmask("+9(999)999-99-99").mask(InputTel);
-	},
-	// /inputMask
 	ifie: function ifie() {
 		var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 
@@ -131,7 +56,6 @@ var $ = jQuery;
 function eventHandler() {
 	JSCCommon.ifie();
 	JSCCommon.tabscostume('tabs');
-	JSCCommon.mobileMenu();
 	JSCCommon.heightwindow();
 	var topNav = document.querySelector('.top-nav  ');
 
@@ -152,7 +76,26 @@ function eventHandler() {
 		window.scrollY > 0 ? topNav.classList.add('fixed') : topNav.classList.remove('fixed');
 	} // modal window
 	//luckyone js
-	//sliders
+	//menu js
+
+
+	$('.toggle-menu-mobile--js').click(function () {
+		document.body.removeEventListener('click', mobMenuMissClick);
+		$('.toggle-menu-mobile--js').toggleClass('on');
+		$('body').toggleClass('fixed');
+		$('.menu-mobile--js').toggleClass('active');
+		window.setTimeout(function () {
+			document.body.addEventListener('click', mobMenuMissClick);
+		}, 10);
+	});
+
+	function mobMenuMissClick() {
+		if (!event.target.closest('.menu-mobile--js')) {
+			$('.toggle-menu-mobile--js').removeClass('on');
+			$('body').removeClass('fixed');
+			$('.menu-mobile--js').removeClass('active');
+		}
+	} //sliders
 
 
 	var tabsSlider = new Swiper('.tabs-slider-js', {
