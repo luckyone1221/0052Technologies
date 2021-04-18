@@ -133,28 +133,27 @@ function eventHandler() {
 	JSCCommon.tabscostume('tabs');
 	JSCCommon.mobileMenu();
 	JSCCommon.heightwindow();
+	var topNav = document.querySelector('.top-nav  ');
 
-	function whenResize() {
-		var topNav = document.querySelector('.top-nav  ');
-		if (!topNav) return;
-		window.addEventListener('scroll', function (e) {
-			this.scrollY > 0 ? topNav.classList.add('fixed') : topNav.classList.remove('fixed');
-		}, {
+	if (topNav) {
+		window.addEventListener('scroll', setFixedClass, {
 			passive: true
 		});
+		window.addEventListener('resize', setFixedClass, {
+			passive: true
+		});
+		setFixedClass();
+		window.setTimeout(function () {
+			setFixedClass();
+		}, 100);
 	}
 
-	window.addEventListener('resize', function () {
-		whenResize();
-	}, {
-		passive: true
-	});
-	whenResize();
-	window.setTimeout(function () {
-		whenResize();
-	}, 100); // modal window
+	function setFixedClass() {
+		window.scrollY > 0 ? topNav.classList.add('fixed') : topNav.classList.remove('fixed');
+	} // modal window
 	//luckyone js
 	//sliders
+
 
 	var tabsSlider = new Swiper('.tabs-slider-js', {
 		slidesPerView: 'auto',

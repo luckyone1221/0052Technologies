@@ -119,25 +119,21 @@ function eventHandler() {
 	JSCCommon.mobileMenu();
 	JSCCommon.heightwindow();
 
-	function whenResize() {
-		let topNav = document.querySelector('.top-nav  ');
-		if (!topNav) return;
-		window.addEventListener('scroll', function (e) {
-			this.scrollY > 0
-				? topNav.classList.add('fixed')
-				: topNav.classList.remove('fixed');
-		}, { passive: true })
+	let topNav = document.querySelector('.top-nav  ');
+	if (topNav){
+		window.addEventListener('scroll', setFixedClass, { passive: true });
+		window.addEventListener('resize', setFixedClass, { passive: true });
 
+		setFixedClass();
+		window.setTimeout(function (){
+			setFixedClass();
+		}, 100);
 	}
-
-	window.addEventListener('resize', () => {
-		whenResize();
-
-	}, { passive: true });
-	whenResize();
-	window.setTimeout(function (){
-		whenResize();
-	}, 100);
+	function setFixedClass(){
+		window.scrollY > 0
+			? topNav.classList.add('fixed')
+			: topNav.classList.remove('fixed');
+	}
 	// modal window
 
 	//luckyone js
