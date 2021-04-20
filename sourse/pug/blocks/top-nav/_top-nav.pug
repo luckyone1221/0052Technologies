@@ -4,10 +4,10 @@ mixin mob-mnu()
 			span
 		+e.inner
 			+e.logo(href='/')
-				img(loading="lazy" src='img/@2x/logo.png' alt="")
+				img(loading="lazy" src='img/svg/logo.svg' alt="")
 			+mnu()
 			+e.btn-cont
-				+e.btn(href="#") Связаться с нами
+				+e.btn(href="#sColor") Связаться с нами
 	//  мобильное меню
 
 mixin top-nav() 
@@ -18,11 +18,11 @@ mixin top-nav()
 				.row.align-items-center
 					.col
 						+e.logo(href='#')
-							img(loading="lazy" src='img/@2x/logo.png' alt="")
+							img(loading="lazy" src='img/svg/logo.svg' alt="")
 					.col-auto.d-none.d-lg-block
 						+mnu()
 					.col-auto.d-none.d-sm-block
-						+e.connect-btn(href='#') Связаться с нами
+						+e.connect-btn(href='#sColor') Связаться с нами
 					.col-auto.d-lg-none
 						+b.toggle-menu-mobile--js
 							span

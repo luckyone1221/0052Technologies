@@ -13,21 +13,19 @@ mixin sDesisions(data)
 				+desisionItem('CRM - система', '2.png')
 				+desisionItem('ЖКХ ', '3.jpg')
 				+desisionItem('Система оценки чемпионатов', '4.png')
-				+desisionSmItem('Инвентаризация')
-				+desisionSmItem('CRM - система')
-				+desisionSmItem('ЖКХ')
-				+desisionSmItem('Система оценки чемпионатов')
+				//+desisionSmItem('Инвентаризация')
+				//+desisionSmItem('CRM - система')
+				//+desisionSmItem('ЖКХ')
+				//+desisionSmItem('Система оценки чемпионатов')
 	// end sDesisions
 
 mixin desisionItem(title, imgNum)
-	+e.col.col-6
-		+e.txt-box.d-none.d-lg-block
+	+e.col.col-md-6
+		+e.txt-box
 			+e.title(href='#')=title
 			+e.txt РусТехнолоджи предоставляет услуги полного цикла по разработке, внедрению и сопровождению IT-решений.
 		+e.img(href="#")
 			+pic(`desisions-img-${imgNum}`)
-		//-+e.img(href="#")
-			img(loading="lazy" src=`img/@2x/desisions-img-${imgNum}` alt="")
 
 mixin desisionSmItem(title)
 	.col-md-6.d-lg-none

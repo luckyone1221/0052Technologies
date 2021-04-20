@@ -1,4 +1,11 @@
 const JSCCommon = {
+	// /tabs
+	ifie() {
+		var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
+		if (isIE11) {
+			document.body.insertAdjacentHTML("beforeend", '<div class="browsehappy">	<p class=" container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p></div>');
+		}
+	},
 	// tabs  .
 	tabscostume(tab) {
 		let tabs = {
@@ -23,13 +30,66 @@ const JSCCommon = {
 			})
 		})
 	},
-	// /tabs
-	ifie() {
-		var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
-		if (isIE11) {
-			document.body.insertAdjacentHTML("beforeend", '<div class="browsehappy">	<p class=" container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p></div>');
+	modalCall() {
+
+		$(".link-modal-js").fancybox({
+			arrows: false,
+			infobar: false,
+			touch: false,
+			type: 'inline',
+			autoFocus: false,
+			i18n: {
+				en: {
+					CLOSE: "Закрыть",
+					NEXT: "Вперед",
+					PREV: "Назад",
+					// PLAY_START: "Start slideshow",
+					// PLAY_STOP: "Pause slideshow",
+					// FULL_SCREEN: "Full screen",
+					// THUMBS: "Thumbnails",
+					// DOWNLOAD: "Download",
+					// SHARE: "Share",
+					// ZOOM: "Zoom"
+				},
+			},
+			beforeLoad: function () {
+				//if (!document.querySelector("html").classList.contains(".fixed")) document.querySelector("html").style.marginRight = scrollWidth + 'px';
+			},
+			afterClose: function () {
+				//if (!document.querySelector("html").classList.contains(".fixed")) document.querySelector("html").style.marginRight = null;
+				// 	document.querySelector("html").classList.remove("fixed")
+			},
+		});
+		$(".modal-close-js").click(function () {
+			$.fancybox.close();
+		})
+		$.fancybox.defaults.backFocus = false;
+		const linkModal = document.querySelectorAll('.link-modal-js');
+		function addData() {
+			linkModal.forEach(element => {
+				element.addEventListener('click', () => {
+					let modal = document.querySelector(element.getAttribute("href"));
+					const data = element.dataset;
+
+					function setValue(val, elem) {
+						if (elem && val) {
+							const el = modal.querySelector(elem)
+							el.tagName == "INPUT"
+								? el.value = val
+								: el.innerHTML = val;
+							// console.log(modal.querySelector(elem).tagName)
+						}
+					}
+					setValue(data.title, '.ttu');
+					setValue(data.text, '.after-headline');
+					setValue(data.btn, '.btn');
+					setValue(data.order, '.order');
+				})
+			})
 		}
+		if (linkModal) addData();
 	},
+	// /modalCall
 	heightwindow() {
 		// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
 		let vh = window.innerHeight * 0.01;
@@ -43,11 +103,11 @@ const JSCCommon = {
 			document.documentElement.style.setProperty('--vh', `${vh}px`);
 		}, { passive: true });
 	},
-	getCurrentYear(el) {
-		let now = new Date();
-		let currentYear = document.querySelector(el);
-		if (currentYear) currentYear.innerText = now.getFullYear();
-	}
+	checkEmptyVal() {
+		(this.value !== '' || this.type == "date")
+			? $(this).addClass('not-empty')
+			: $(this).removeClass('not-empty')
+	},
 };
 const $ = jQuery;
 
@@ -55,7 +115,14 @@ function eventHandler() {
 	JSCCommon.ifie();
 	JSCCommon.tabscostume('tabs');
 	JSCCommon.heightwindow();
+	JSCCommon.modalCall();
+	JSCCommon.checkEmptyVal();
 
+
+	$('.has-ph-js').blur(JSCCommon.checkEmptyVal);
+	$('.has-ph-js').each(JSCCommon.checkEmptyVal);
+
+	//
 	let topNav = document.querySelector('.top-nav  ');
 	if (topNav){
 		window.addEventListener('scroll', setFixedClass, { passive: true });

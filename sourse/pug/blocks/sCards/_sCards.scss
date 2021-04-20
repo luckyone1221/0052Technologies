@@ -25,15 +25,16 @@
 	}
 	&__ball{
 		position: absolute;
-		right: rem(45/2);
-		bottom: rem(-512/2);
-		width: rem(870/2);
-		height: rem(865/2);
+		right: rem(45);
+		bottom: rem(-512);
+		width: rem(870);
+		height: rem(865);
 		@include media-breakpoint-up(xl){
 			right: rem(45);
 			bottom: rem(-512);
-			width: rem(870);
-			height: rem(865);
+			width: rem(870*2);
+			height: rem(865*2);
+			transform: translateX(40%) translateY(40%);
 		}
 
 		//background: $primary;

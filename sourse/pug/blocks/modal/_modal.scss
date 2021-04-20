@@ -1,46 +1,127 @@
 .modal-win {
-	// display: block;
 	width: 100%;
 	position: relative;
-	max-width: rem(500);
+	max-width: rem(488);
+	padding: rem(33) rem(40) rem(36);
 
 	.modal-content {
-		// max-width: 485px;
-		// padding-right: 40px 15px;
+
+	}
+	.form-wrap{
+		&__title-wrap{
+			padding-bottom: 20px;
+			margin-bottom: 24px;
+			border-bottom: 1px solid rgba($brown, .1);
+		}
+		&__title{
+
+		}
+		&__descr{
+			font-weight: 500;
+			line-height: 1.6;
+			color: $brown;
+		}
+		.custop-ph-label {
+			position: relative;
+			margin-bottom: rem(24px);
+
+			input.not-empty,
+			input:focus {
+				background-color: $white;
+				padding-top: rem(27px);
+				padding-bottom: rem(7px);
+			}
+
+			input.not-empty + span,
+			input:focus + span,
+			textarea.not-empty + span,
+			textarea:focus + span {
+				top: rem(10px) !important;
+				font-size: rem(12) !important;
+				color: $brown!important;
+				text-shadow: 0 0 .7px rgba($brown, .8);
+			}
+
+		}
+		&__l-title {
+			@include mt();
+			position: absolute;
+
+			top: calc(#{$input-padding-y});
+			left: calc(#{$input-padding-x} + #{$input-border-width});
+
+			font-weight: 500;
+			text-shadow: 0 0 .7px rgba($brown, .5);
+
+			@include media-breakpoint-up(xl) {
+				font-size: rem(20);
+			}
+
+			line-height: $input-line-height;
+
+			font-size: rem(16);
+			color: rgba($brown, 0.5);
+		}
+
+		&__input {
+			background-color: $gray-110;
+			height: 56px;
+		}
+
+		&__send-btn{
+			@extend .btn;
+			@extend .btn-primary;
+
+			width: 100%;
+			margin-bottom: rem(24px);
+		}
+		&__polite{
+			text-shadow: 0 0 .7px rgba($brown, .8);
+			font-size: rem(12px);
+			line-height: 1.3;
+			color: $brown;
+
+			a{
+				@include mt();
+				color: currentColor;
+				text-decoration: underline!important;
+				&:hover{
+					text-decoration: none!important;
+					opacity: .8;
+				}
+			}
+		}
+		&__select{
+			background-color: $input-border-color;
+
+			&:focus{
+				background-color: $white;
+			}
+
+			margin-bottom: 24px;
+		}
+
+		&__{}
 	}
 
-	.mfp-close {
-		color: $primary;
-		font-size: 40px;
-		font-weight: 100;
-	}
-}
-
-a {
-	outline: 0 !important;
+	//.mfp-close {
+	//	color: $primary;
+	//	font-size: 40px;
+	//	font-weight: 100;
+	//}
 }
 
 .modal-form {
 	position: relative;
 }
 
-#foot-dialog {
-	h3 {
-		font-size: em(36);
-	}
-}
-
 .mfp-close {
-	user-select: none; // width: 44px;
-	// height: 44px;
-	// line-height: 44px;
+	user-select: none;
 	position: absolute;
 	right: 0;
 	top: 0;
 	text-decoration: none;
 	text-align: center;
-	opacity: .65; // padding: 0 0 18px 10px;
-	// color: #fff;
 	font-style: normal;
 	font-size: 28px;
 	font-family: Arial, Baskerville, monospace;
@@ -50,21 +131,19 @@ a {
 	border: 0;
 	display: block;
 	outline: 0;
-	padding: 0;
 	z-index: 1046;
 	box-shadow: none;
 	color: $body-color;
 	opacity: 1;
 	font-size: 50px;
 	font-weight: 100;
-	width: 56px;
-	height: 56px; // box-shadow: 0 10px $h2-font-size rgba(0, 0, 0, 0.15);
-	// background-color: #fff;
+	width: 16px;
+	height: 16px;
 	border-radius: 50%;
 	line-height: 56px;
-	text-align: center;
 	margin-top: -5px;
 	margin-right: -5px;
+	padding: 8px!important;
 	@include mt;
 
 	&:hover {
@@ -72,57 +151,8 @@ a {
 	}
 }
 
-@include media-breakpoint-up(sm) {
-	.modal-text {
-		max-width: 1000px;
-	}
+.fancybox-button.fancybox-close-small{
+	padding: 8px!important;
+	//width: 32px;
+	//height: 32px;
 }
-
-.polite {
-	.link {
-		color: $primary;
-		cursor: pointer;
-		text-decoration: underline;
-
-		:hover {
-			display: none;
-		}
-	}
-}
-
-
-// 
-@include media-breakpoint-up(xl) {}
-
-@include media-breakpoint-up(lg) {}
-
-@include media-breakpoint-up(md) {}
-
-@include media-breakpoint-up(sm) {}
-
-@include media-breakpoint-up(xs) {}
-
-// 
-@include media-breakpoint-between(md, xl) {}
-
-// 
-@include media-breakpoint-only(xs) {}
-
-@include media-breakpoint-only(sm) {}
-
-@include media-breakpoint-only(md) {}
-
-@include media-breakpoint-only(lg) {}
-
-@include media-breakpoint-only(xl) {}
-
-// 
-@include media-breakpoint-down(xl) {}
-
-@include media-breakpoint-down(lg) {}
-
-@include media-breakpoint-down(md) {}
-
-@include media-breakpoint-down(sm) {}
-
-@include media-breakpoint-down(xs) {}

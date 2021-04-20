@@ -85,6 +85,14 @@
 		}
 		&__content{
 			font-size: rem(20);
+
+			min-height: 310px;
+			@include media-breakpoint-up(xl){
+				min-height: 160px;
+			}
+			@include media-breakpoint-up(xxl){
+				min-height: 130px;
+			}
 		}
 	}
 	&__img{

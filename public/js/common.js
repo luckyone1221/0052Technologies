@@ -1,6 +1,14 @@
 "use strict";
 
 var JSCCommon = {
+	// /tabs
+	ifie: function ifie() {
+		var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
+
+		if (isIE11) {
+			document.body.insertAdjacentHTML("beforeend", '<div class="browsehappy">	<p class=" container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p></div>');
+		}
+	},
 	// tabs  .
 	tabscostume: function tabscostume(tab) {
 		var tabs = {
@@ -23,14 +31,63 @@ var JSCCommon = {
 			});
 		});
 	},
-	// /tabs
-	ifie: function ifie() {
-		var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
+	modalCall: function modalCall() {
+		$(".link-modal-js").fancybox({
+			arrows: false,
+			infobar: false,
+			touch: false,
+			type: 'inline',
+			autoFocus: false,
+			i18n: {
+				en: {
+					CLOSE: "Закрыть",
+					NEXT: "Вперед",
+					PREV: "Назад" // PLAY_START: "Start slideshow",
+					// PLAY_STOP: "Pause slideshow",
+					// FULL_SCREEN: "Full screen",
+					// THUMBS: "Thumbnails",
+					// DOWNLOAD: "Download",
+					// SHARE: "Share",
+					// ZOOM: "Zoom"
 
-		if (isIE11) {
-			document.body.insertAdjacentHTML("beforeend", '<div class="browsehappy">	<p class=" container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p></div>');
+				}
+			},
+			beforeLoad: function beforeLoad() {//if (!document.querySelector("html").classList.contains(".fixed")) document.querySelector("html").style.marginRight = scrollWidth + 'px';
+			},
+			afterClose: function afterClose() {//if (!document.querySelector("html").classList.contains(".fixed")) document.querySelector("html").style.marginRight = null;
+				// 	document.querySelector("html").classList.remove("fixed")
+			}
+		});
+		$(".modal-close-js").click(function () {
+			$.fancybox.close();
+		});
+		$.fancybox.defaults.backFocus = false;
+		var linkModal = document.querySelectorAll('.link-modal-js');
+
+		function addData() {
+			linkModal.forEach(function (element) {
+				element.addEventListener('click', function () {
+					var modal = document.querySelector(element.getAttribute("href"));
+					var data = element.dataset;
+
+					function setValue(val, elem) {
+						if (elem && val) {
+							var el = modal.querySelector(elem);
+							el.tagName == "INPUT" ? el.value = val : el.innerHTML = val; // console.log(modal.querySelector(elem).tagName)
+						}
+					}
+
+					setValue(data.title, '.ttu');
+					setValue(data.text, '.after-headline');
+					setValue(data.btn, '.btn');
+					setValue(data.order, '.order');
+				});
+			});
 		}
+
+		if (linkModal) addData();
 	},
+	// /modalCall
 	heightwindow: function heightwindow() {
 		// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
 		var vh = window.innerHeight * 0.01; // Then we set the value in the --vh custom property to the root of the document
@@ -45,10 +102,8 @@ var JSCCommon = {
 			passive: true
 		});
 	},
-	getCurrentYear: function getCurrentYear(el) {
-		var now = new Date();
-		var currentYear = document.querySelector(el);
-		if (currentYear) currentYear.innerText = now.getFullYear();
+	checkEmptyVal: function checkEmptyVal() {
+		this.value !== '' || this.type == "date" ? $(this).addClass('not-empty') : $(this).removeClass('not-empty');
 	}
 };
 var $ = jQuery;
@@ -57,6 +112,11 @@ function eventHandler() {
 	JSCCommon.ifie();
 	JSCCommon.tabscostume('tabs');
 	JSCCommon.heightwindow();
+	JSCCommon.modalCall();
+	JSCCommon.checkEmptyVal();
+	$('.has-ph-js').blur(JSCCommon.checkEmptyVal);
+	$('.has-ph-js').each(JSCCommon.checkEmptyVal); //
+
 	var topNav = document.querySelector('.top-nav  ');
 
 	if (topNav) {

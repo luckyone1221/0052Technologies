@@ -1,7 +1,8 @@
 mixin sProjects(data)
 	// start sProjects
 	+b.SECTION.sProjects.section#sProjects&attributes(attributes)
-		+e.ball
+		+e.ball-cont
+			+e.ball
 		+e.container.container.fadeIn.wow(data-wow-duration='.4s' data-wow-delay='.3s')
 			+b.section-title
 				h2 Проекты
@@ -34,9 +35,9 @@ mixin sProjectsBox()
 				+e.descr-txt Агентство развития профессионального мастерства
 				+e.pills-row.row.gy-2
 					.col-auto
-						+e.btn(href="#") Страхование
+						+e.pill(href="#") Страхование
 					.col-auto
-						+e.btn(href="#") Мобильное приложение
+						+e.pill(href="#") Мобильное приложение
 				+e.descr-row.row
 					+sProjectsBoxItem()
 						| Предоставляет услуги полного цикла по разработке, внедрению и сопровождению IT-решений.
@@ -46,7 +47,7 @@ mixin sProjectsBox()
 						| Предоставляет услуги полного цикла по разработке, внедрени
 					+sProjectsBoxItem()
 						| Предоставляет услуги полного цикла по разработке,
-				+e.learn-more-btn(href="#") Узнать больше
+				+e.learn-more-btn.link-modal-js(href="#learn-stab") Узнать больше
 
 mixin sProjectsBoxItem()
 	+e.col.col-lg-6
