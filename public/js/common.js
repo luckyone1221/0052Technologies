@@ -31,6 +31,49 @@ var JSCCommon = {
 			});
 		});
 	},
+	sendForm: function sendForm() {
+		var gets = function () {
+			var a = window.location.search;
+			var b = new Object();
+			var c;
+			a = a.substring(1).split("&");
+
+			for (var i = 0; i < a.length; i++) {
+				c = a[i].split("=");
+				b[c[0]] = c[1];
+			}
+
+			return b;
+		}(); // form
+
+
+		$(document).on('submit', "form", function (e) {
+			e.preventDefault();
+			var th = $(this);
+			var data = th.serialize();
+			th.find('.utm_source').val(decodeURIComponent(gets['utm_source'] || ''));
+			th.find('.utm_term').val(decodeURIComponent(gets['utm_term'] || ''));
+			th.find('.utm_medium').val(decodeURIComponent(gets['utm_medium'] || ''));
+			th.find('.utm_campaign').val(decodeURIComponent(gets['utm_campaign'] || ''));
+			$.ajax({
+				url: 'action.php',
+				type: 'POST',
+				data: data
+			}).done(function (data) {
+				$.fancybox.close();
+				console.log('open ty');
+				$.fancybox.open({
+					src: '#modal-thanks',
+					type: 'inline'
+				}); // window.location.replace("/thanks.html");
+
+				setTimeout(function () {
+					// Done Functions
+					th.trigger("reset");
+				}, 4000);
+			}).fail(function () {});
+		});
+	},
 	modalCall: function modalCall() {
 		$(".link-modal-js").fancybox({
 			arrows: false,
@@ -42,20 +85,8 @@ var JSCCommon = {
 				en: {
 					CLOSE: "Закрыть",
 					NEXT: "Вперед",
-					PREV: "Назад" // PLAY_START: "Start slideshow",
-					// PLAY_STOP: "Pause slideshow",
-					// FULL_SCREEN: "Full screen",
-					// THUMBS: "Thumbnails",
-					// DOWNLOAD: "Download",
-					// SHARE: "Share",
-					// ZOOM: "Zoom"
-
+					PREV: "Назад"
 				}
-			},
-			beforeLoad: function beforeLoad() {//if (!document.querySelector("html").classList.contains(".fixed")) document.querySelector("html").style.marginRight = scrollWidth + 'px';
-			},
-			afterClose: function afterClose() {//if (!document.querySelector("html").classList.contains(".fixed")) document.querySelector("html").style.marginRight = null;
-				// 	document.querySelector("html").classList.remove("fixed")
 			}
 		});
 		$(".modal-close-js").click(function () {
@@ -103,7 +134,7 @@ var JSCCommon = {
 		});
 	},
 	checkEmptyVal: function checkEmptyVal() {
-		this.value !== '' || this.type == "date" ? $(this).addClass('not-empty') : $(this).removeClass('not-empty');
+		this.value !== '' || this.tagName == "SELECT" && this.querySelector('option').value !== null && this.querySelector('option').text || this.type == "date" ? $(this).addClass('not-empty') : $(this).removeClass('not-empty');
 	}
 };
 var $ = jQuery;
@@ -113,9 +144,11 @@ function eventHandler() {
 	JSCCommon.tabscostume('tabs');
 	JSCCommon.heightwindow();
 	JSCCommon.modalCall();
+	JSCCommon.sendForm();
 	JSCCommon.checkEmptyVal();
 	$('.has-ph-js').blur(JSCCommon.checkEmptyVal);
-	$('.has-ph-js').each(JSCCommon.checkEmptyVal); //
+	$('.has-ph-js').each(JSCCommon.checkEmptyVal);
+	$('.has-ph-js.select-custom--js').on('select', JSCCommon.checkEmptyVal); //
 
 	var topNav = document.querySelector('.top-nav  ');
 

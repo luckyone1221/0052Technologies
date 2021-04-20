@@ -6,9 +6,25 @@ mixin modal()
 				+e.title.h3.mb-3 Узнайте больше
 				+e.descr Заполните форму и мы свяжемся с Вами в течении 20 минут и сориентируем по всем вопросам
 			+inp3('Название компании', 'text', 'company')
-			+inp3('E-mail', 'email', 'email')(value="Sample@sample.com")
-			+inp3('Название компании', 'text', 'name')
-			+e.send-btn(type='button') Отправить
+			+inp3('E-mail', 'email', 'email')(require)
+			+inp3('Контактное лицо', 'text', 'contact-man')(require)
+			+e.send-btn(type='submit') Отправить
+			+e.polite
+				| При отправке вы подтверждаете согласие
+				br
+				| с
+				|
+				a(href='#') политикой конфиденциальности
+	+b.modal-win(id="begin-cowork" style="display: none")
+		+form-wrap
+			+e.title-wrap
+				+e.title.h3.mb-3 Узнайте больше
+				+e.descr Заполните форму и мы свяжемся с Вами в течении 20 минут и сориентируем по всем вопросам
+			+inp3('Название компании', 'text', 'company')
+			+inp3('E-mail', 'email', 'email')(require)
+			+inp3('Номер телефона', 'tel', 'tel')(require)
+			+inp3('Контактное лицо', 'text', 'contact-man')(require)
+			+e.send-btn(type='submit') Отправить
 			+e.polite
 				| При отправке вы подтверждаете согласие
 				br
@@ -16,33 +32,40 @@ mixin modal()
 				|
 				a(href='#') политикой конфиденциальности
 	// #modal-call
-	+b.modal-win(id="learn-stab" style="display: none")
+	+b.modal-win(id="partner-up" style="display: none")
 		+form-wrap
 			+e.title-wrap
-				+e.title.h3.mb-3 Заголовок
+				+e.title.h3.mb-3 Узнайте больше
 				+e.descr Заполните форму и мы свяжемся с Вами в течении 20 минут и сориентируем по всем вопросам
 			+inp3('Название компании', 'text', 'company')
 			+inp3('ИНН', 'text', 'inn')
-			+e.SELECT.select.form-control.form-select.repaint-select-js
-				option(muted selected class="d-none") Род деятельности
-				option placeholder 1
-				option placeholder 2
-				option placeholder 3
-			+inp3('E-mail', 'email', 'email')(value="Sample@sample.com")
-			+inp3('Название компании', 'text', 'name')
-			+e.send-btn(type='button') Отправить
+			.label.select-label
+				+e.SELECT.select.form-control.form-select.select-custom--js.has-ph-js(name='work-type')
+					option Интегратор
+					option дилер
+					option постащик оборудоания
+					option иное
+				+e.SPAN.l-title--select Род деятельности
+			+inp3('E-mail', 'email', 'email')(require)
+			+inp3('Контактное лицо', 'text', 'contact-man')(require)
+			+e.send-btn(type='submit') Отправить
 			+e.polite
 				| При отправке вы подтверждаете согласие
 				br
 				| с
 				|
 				a(href='#') политикой конфиденциальности
+	+b.modal-win(id="modal-thanks" style="display: none")
+		.text-center
+			.h3.mb-3 Спасибо!
+			+e.descr Мы свяжемся с Вами в течении 20 минут и сориентируем по всем вопросам
+
 	// #modal-call
 
 	// end modals
 
 mixin inp3(ph, type, val='', labelClass='custop-ph-label', name="name")
-	label(class=labelClass)
-		+e.INPUT.input.form-control.has-ph-js(type=type name= name)&attributes(attributes)
+	.label(class=labelClass)
+		+e.INPUT.input.form-control.has-ph-js(type=type name=name)&attributes(attributes)
 		+e.SPAN.l-title=ph
 		block

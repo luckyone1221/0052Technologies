@@ -12,11 +12,9 @@ $mail->CharSet = 'utf-8';
 ///who send 
 $mail->setFrom('info@info.com','info info');
 
- $mail->addAddress('wol1414@gmail.com');
- // $mail->addAddress('horenkova369@gmail.com');
-// $mail->addAddress('stab@inbox.support');
-
-
+ $mail->addAddress('info@goltsblat.org');
+ $mail->addAddress('info@rthn.ru');
+ //$mail->addAddress('');
 
 //Субъект
 $mail->Subject = 'Заявка с сайта';
@@ -27,6 +25,15 @@ $html = '
 <table style="width: 100%;">';
     if (!empty($_POST['order'])) {
         $html .= ' <tr style="background-color: #f8f8f8;">  <td style="padding: 10px; border: #e9e9e9 1px solid;">Вид формы:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['order'] . '</b></td></tr>';
+    }
+    if (!empty($_POST['company'])) {
+        $html .= ' <tr style="background-color: #f8f8f8;">  <td style="padding: 10px; border: #e9e9e9 1px solid;">Название компании:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['company'] . '</b></td></tr>';
+    }
+    if (!empty($_POST['contact-man'])) {
+        $html .= ' <tr style="background-color: #f8f8f8;">  <td style="padding: 10px; border: #e9e9e9 1px solid;">Контактное лицо:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['contact-man'] . '</b></td></tr>';
+    }
+    if (!empty($_POST['work-type'])) {
+        $html .= ' <tr style="background-color: #f8f8f8;">  <td style="padding: 10px; border: #e9e9e9 1px solid;">Род деятельности:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['work-type'] . '</b></td></tr>';
     }
 
     if (!empty($_POST['name'])) {
