@@ -159,8 +159,8 @@ var JSCCommon = {
 var $ = jQuery;
 
 function eventHandler() {
-	JSCCommon.ifie();
-	JSCCommon.tabscostume('tabs');
+	JSCCommon.ifie(); // JSCCommon.tabscostume('tabs');
+
 	JSCCommon.heightwindow();
 	JSCCommon.modalCall();
 	JSCCommon.sendForm();
@@ -215,32 +215,38 @@ function eventHandler() {
 		slidesPerView: 'auto',
 		freeMode: true,
 		freeModeMomentum: true,
-		watchOverflow: true
+		watchOverflow: true,
+		watchSlidesVisibility: true
 	}; //sliders
+	// let tabsSlider = new Swiper('.tabs-slider-js', {
+	// });
 
-	var tabsSlider = new Swiper('.tabs-slider-js', _objectSpread(_objectSpread({}, def), {}, {
-		breakpoints: {
-			0: {
-				spaceBetween: 20
-			},
-			768: {
-				spaceBetween: 32
-			},
-			1500: {
-				spaceBetween: 58
+	function slideWithThumbs() {
+		var th = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '.gallery-thumbs';
+		var sl = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '.gallery-top';
+		var galleryThumbs = new Swiper(th, _objectSpread(_objectSpread({}, def), {}, {
+			breakpoints: {
+				0: {
+					spaceBetween: 20
+				},
+				768: {
+					spaceBetween: 32
+				},
+				1500: {
+					spaceBetween: 58
+				}
 			}
-		}
-	}));
-	var sProjectsTabsSlider = new Swiper('.sProject-tabs-slider-js', _objectSpread(_objectSpread({}, def), {}, {
-		breakpoints: {
-			0: {
-				spaceBetween: 20
-			},
-			768: {
-				spaceBetween: 32
+		}));
+		var galleryTop = new Swiper(sl, {
+			spaceBetween: 10,
+			thumbs: {
+				swiper: galleryThumbs
 			}
-		}
-	})); //wow js
+		});
+	}
+
+	slideWithThumbs();
+	slideWithThumbs('.gallery-thumbs2', '.gallery-top2'); //wow js
 
 	var wow = new WOW({
 		mobile: false

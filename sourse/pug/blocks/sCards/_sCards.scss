@@ -80,6 +80,7 @@
 		display: block;
 		min-height: 100%;
 		@include mt();
+		cursor: pointer;
 
 		padding: rem(30) rem(15);
 		@include media-breakpoint-up(sm){

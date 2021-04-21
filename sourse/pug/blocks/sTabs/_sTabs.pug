@@ -7,26 +7,41 @@ mixin sTabs(data)
 			img(loading="lazy" src='img/svg/tabs-bot-r-line.svg' alt="")
 		+e.bg--b-mid
 			img(loading="lazy" src='img/svg/tabs-bot-mid-bg.svg' alt="")
-		.container.fadeIn.wow(data-wow-duration='.4s' data-wow-delay='.3s')
-			+e.row.row.align-items-center.gy-4
-				.col-lg-8.tabs-slider-parent-js
-					+b.tabs
-						+e.caption.swiper-container.tabs-slider-js
-							.swiper-wrapper
-								+sTabsSlide('О нас')(class="active")
-								+sTabsSlide('Как мы работаем')
-								+sTabsSlide('Технологии')
-								+sTabsSlide('Решения')
-						+e.wrap
-							+e.content.active РусТехнолоджи предоставляет услуги полного цикла по разработке, внедрению и сопровождению IT-решений. Мы разрабатываем функциональные веб-сайты, мобильные приложения, проектируем правильные интерфейсы, реализуем и автоматизируем сложные бизнес-процессы, и делаем это все красиво.
-							+e.content 2
-							+e.content 3
-							+e.content 4
-				.col-lg-4
-					+e.img
-						img(loading="lazy" src="img/svg/stabs-img.svg" alt="")
+		.fadeIn.wow(data-wow-duration='.4s' data-wow-delay='.3s')
+			+b.tabs
+				.container
+					+e.row.row
+						.col-lg-8.tabs-slider-parent-js
+								+e.caption.swiper-container.tabs-slider-js.gallery-thumbs
+									.swiper-wrapper
+										+sTabsSlide('О нас')(class="active")
+										+sTabsSlide('Как мы работаем')
+										+sTabsSlide('Технологии')
+										+sTabsSlide('Решения')
+				+e.wrap.gallery-top.swiper-container
+					.swiper-wrapper
+						mixin slide()
+							+e.slide.swiper-slide&attributes(attributes) 
+								.container
+									+e.row.row.gy-4
+										.col-lg-8
+											block
+											p РусТехнолоджи предоставляет услуги полного цикла по разработке, внедрению и сопровождению IT-решений. Мы разрабатываем функциональные веб-сайты, мобильные приложения, проектируем правильные интерфейсы, реализуем и автоматизируем сложные бизнес-процессы, и делаем это все красиво.
+										.col-lg-4
+											+e.img
+												img(loading="lazy" src="img/svg/stabs-img.svg" alt="")
+						+slide().active
+							| 1
+							
+						+slide()
+							| 2
+							p РусТехнолоджи предоставляет услуги полного цикла по разработке, внедрению и сопровождению IT-решений. Мы разрабатываем функциональные веб-сайты, мобильные приложения, проектируем правильные интерфейсы, реализуем и автоматизируем сложные бизнес-процессы, и делаем это все красиво.
+						+slide()
+							| 3
+						+slide()
+							| 4
 	// end sTabs
 
 mixin sTabsSlide(txt)
 	.swiper-slide
-		+e.btn&attributes(attributes)=txt
+		+e.btn=txt
