@@ -1,7 +1,7 @@
 // start .sTabs
 .sTabs {
 	--sPT: #{rem(46)};
-	--sPB: #{rem(30)};
+	--sPB: #{rem(90)};
 
 	position: relative;
 	z-index: 1;
@@ -142,16 +142,16 @@
 			font-size: rem(20);
 
 			min-height: 310px;
-			@include media-breakpoint-up(xl){
-				min-height: 160px;
-			}
-			@include media-breakpoint-up(xxl){
-				min-height: 130px;
-			}
+			// @include media-breakpoint-up(xl){
+			// 	min-height: 160px;
+			// }
+			// @include media-breakpoint-up(xxl){
+			// 	min-height: 130px;
+			// }
 		}
 	}
 	
-	
+
 	.swiper-slide-thumb-active .tabs__btn{
 	border-bottom-color: $primary;
 }

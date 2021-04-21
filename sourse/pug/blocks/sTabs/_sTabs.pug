@@ -10,36 +10,33 @@ mixin sTabs(data)
 		.fadeIn.wow(data-wow-duration='.4s' data-wow-delay='.3s')
 			+b.tabs
 				.container
-					+e.row.row
+					+e.row.row.gy-4
 						.col-lg-8.tabs-slider-parent-js
-								+e.caption.swiper-container.tabs-slider-js.gallery-thumbs
-									.swiper-wrapper
-										+sTabsSlide('О нас')(class="active")
-										+sTabsSlide('Как мы работаем')
-										+sTabsSlide('Технологии')
-										+sTabsSlide('Решения')
-				+e.wrap.gallery-top.swiper-container
-					.swiper-wrapper
-						mixin slide()
-							+e.slide.swiper-slide&attributes(attributes) 
-								.container
-									+e.row.row.gy-4
-										.col-lg-8
+							+e.caption.swiper-container.tabs-slider-js.gallery-thumbs
+								.swiper-wrapper
+									+sTabsSlide('О нас')(class="active")
+									+sTabsSlide('Как мы работаем')
+									+sTabsSlide('Технологии')
+									+sTabsSlide('Решения')
+							+e.wrap.gallery-top.swiper-container
+								.swiper-wrapper
+									mixin slide()
+										+e.slide.swiper-slide&attributes(attributes)  
 											block
 											p РусТехнолоджи предоставляет услуги полного цикла по разработке, внедрению и сопровождению IT-решений. Мы разрабатываем функциональные веб-сайты, мобильные приложения, проектируем правильные интерфейсы, реализуем и автоматизируем сложные бизнес-процессы, и делаем это все красиво.
-										.col-lg-4
-											+e.img
-												img(loading="lazy" src="img/svg/stabs-img.svg" alt="")
-						+slide().active
-							| 1
-							
-						+slide()
-							| 2
-							p РусТехнолоджи предоставляет услуги полного цикла по разработке, внедрению и сопровождению IT-решений. Мы разрабатываем функциональные веб-сайты, мобильные приложения, проектируем правильные интерфейсы, реализуем и автоматизируем сложные бизнес-процессы, и делаем это все красиво.
-						+slide()
-							| 3
-						+slide()
-							| 4
+									+slide().active
+										| 1
+										
+									+slide()
+										| 2
+										p РусТехнолоджи предоставляет услуги полного цикла по разработке, внедрению и сопровождению IT-решений. Мы разрабатываем функциональные веб-сайты, мобильные приложения, проектируем правильные интерфейсы, реализуем и автоматизируем сложные бизнес-процессы, и делаем это все красиво.
+									+slide()
+										| 3
+									+slide()
+										| 4
+						.col-lg-4
+							+e.img
+								img(loading="lazy" src="img/svg/stabs-img.svg" alt="")
 	// end sTabs
 
 mixin sTabsSlide(txt)
