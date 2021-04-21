@@ -1,5 +1,5 @@
 /**
- * Swiper Vue 6.5.6
+ * Swiper Vue 6.5.7
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -7,7 +7,7 @@
  *
  * Released under the MIT License
  *
- * Released on: April 9, 2021
+ * Released on: April 16, 2021
  */
 
 import { Swiper } from './esm/vue/swiper';

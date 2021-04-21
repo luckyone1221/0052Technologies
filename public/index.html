@@ -10,6 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 		<link href="libs/@fancyapps/fancybox/jquery.fancybox.min.css" rel="stylesheet"/>
 		<link rel="stylesheet" href="js/animate.css/animate.min.css"/>
+		<link rel="stylesheet" href="libs/select2/css/select2.min.css"/>
 		<link href="css/main.min.css" rel="stylesheet"/>
 	</head>
 	<body>
@@ -88,17 +89,47 @@
 							<div class="headerBlock__p-title">Клиенты и партнеры:
 							</div>
 							<div class="headerBlock__p-items row gy-3 gy-sm-0">
-								<div class="headerBlock__p-item partenrs-item-js wow fadeIn col-6 col-sm-auto headerBlock__p-item headerBlock__p-item--1" data-wow-duration="0.6s" data-wow-delay="200ms"><img loading="lazy" src="img/@2x/partners-1.png" alt=""/>
+								<div class="headerBlock__p-item partenrs-item-js wow fadeIn col-6 col-sm-auto headerBlock__p-item headerBlock__p-item--1" data-wow-duration="0.6s" data-wow-delay="200ms">
+									<!-- picture-->
+									<picture> 
+										<source type="image/webp" srcset="img/@2x/webp/partners-1.webp"/><img src="img/@2x/partners-1.png" alt="" loading="lazy"/>
+									</picture>
+									<!-- /picture-->
 								</div>
-								<div class="headerBlock__p-item partenrs-item-js wow fadeIn col-6 col-sm-auto headerBlock__p-item headerBlock__p-item--2" data-wow-duration="0.6s" data-wow-delay="400ms"><img loading="lazy" src="img/@2x/partners-2.png" alt=""/>
+								<div class="headerBlock__p-item partenrs-item-js wow fadeIn col-6 col-sm-auto headerBlock__p-item headerBlock__p-item--2" data-wow-duration="0.6s" data-wow-delay="400ms">
+									<!-- picture-->
+									<picture> 
+										<source type="image/webp" srcset="img/@2x/webp/partners-2.webp"/><img src="img/@2x/partners-2.png" alt="" loading="lazy"/>
+									</picture>
+									<!-- /picture-->
 								</div>
-								<div class="headerBlock__p-item partenrs-item-js wow fadeIn col-6 col-sm-auto headerBlock__p-item headerBlock__p-item--3" data-wow-duration="0.6s" data-wow-delay="600ms"><img loading="lazy" src="img/@2x/partners-3.png" alt=""/>
+								<div class="headerBlock__p-item partenrs-item-js wow fadeIn col-6 col-sm-auto headerBlock__p-item headerBlock__p-item--3" data-wow-duration="0.6s" data-wow-delay="600ms">
+									<!-- picture-->
+									<picture> 
+										<source type="image/webp" srcset="img/@2x/webp/partners-3.webp"/><img src="img/@2x/partners-3.png" alt="" loading="lazy"/>
+									</picture>
+									<!-- /picture-->
 								</div>
-								<div class="headerBlock__p-item partenrs-item-js wow fadeIn col-6 col-sm-auto headerBlock__p-item headerBlock__p-item--4" data-wow-duration="0.6s" data-wow-delay="800ms"><img loading="lazy" src="img/@2x/partners-4.png" alt=""/>
+								<div class="headerBlock__p-item partenrs-item-js wow fadeIn col-6 col-sm-auto headerBlock__p-item headerBlock__p-item--4" data-wow-duration="0.6s" data-wow-delay="800ms">
+									<!-- picture-->
+									<picture> 
+										<source type="image/webp" srcset="img/@2x/webp/partners-4.webp"/><img src="img/@2x/partners-4.png" alt="" loading="lazy"/>
+									</picture>
+									<!-- /picture-->
 								</div>
-								<div class="headerBlock__p-item partenrs-item-js wow fadeIn col-6 col-sm-auto headerBlock__p-item headerBlock__p-item--5" data-wow-duration="0.6s" data-wow-delay="1000ms"><img loading="lazy" src="img/@2x/partners-5.png" alt=""/>
+								<div class="headerBlock__p-item partenrs-item-js wow fadeIn col-6 col-sm-auto headerBlock__p-item headerBlock__p-item--5" data-wow-duration="0.6s" data-wow-delay="1000ms">
+									<!-- picture-->
+									<picture> 
+										<source type="image/webp" srcset="img/@2x/webp/partners-5.webp"/><img src="img/@2x/partners-5.png" alt="" loading="lazy"/>
+									</picture>
+									<!-- /picture-->
 								</div>
-								<div class="headerBlock__p-item partenrs-item-js wow fadeIn col-6 col-sm-auto headerBlock__p-item headerBlock__p-item--6" data-wow-duration="0.6s" data-wow-delay="1200ms"><img loading="lazy" src="img/@2x/partners-6.png" alt=""/>
+								<div class="headerBlock__p-item partenrs-item-js wow fadeIn col-6 col-sm-auto headerBlock__p-item headerBlock__p-item--6" data-wow-duration="0.6s" data-wow-delay="1200ms">
+									<!-- picture-->
+									<picture> 
+										<source type="image/webp" srcset="img/@2x/webp/partners-6.webp"/><img src="img/@2x/partners-6.png" alt="" loading="lazy"/>
+									</picture>
+									<!-- /picture-->
 								</div>
 							</div>
 						</div>
@@ -449,13 +480,17 @@
 						</div>
 						<div class="form-wrap__descr">Заполните форму и мы свяжемся с Вами в течении 20 минут и сориентируем по всем вопросам
 						</div>
+						<input type="text" name="order"/>
 					</div>
-					<div class="label custop-ph-label"><input class="form-wrap__input form-control has-ph-js" type="text" name="name"/><span class="form-wrap__l-title">Название компании</span>
+					<div class="form-wrap__input-wrap form-group label has-ph-js"><input class="form-wrap__input form-control has-ph-js" name="company" type="text" placeholder="" required="required"/><span class="form-wrap__input-title">Название компании</span>
 					</div>
-					<div class="label custop-ph-label"><input class="form-wrap__input form-control has-ph-js" type="email" name="name" require="require"/><span class="form-wrap__l-title">E-mail</span>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group label has-ph-js"><input class="form-wrap__input form-control has-ph-js" name="email" type="email" placeholder="" required="required"/><span class="form-wrap__input-title">E-mail</span>
 					</div>
-					<div class="label custop-ph-label"><input class="form-wrap__input form-control has-ph-js" type="text" name="name" require="require"/><span class="form-wrap__l-title">Контактное лицо</span>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group label has-ph-js"><input class="form-wrap__input form-control has-ph-js" name="contact-man" type="text" placeholder="" required="required"/><span class="form-wrap__input-title">Контактное лицо</span>
 					</div>
+					<!-- +e.input-wrap-->
 					<button class="form-wrap__send-btn" type="submit">Отправить
 					</button>
 					<div class="form-wrap__polite">При отправке вы подтверждаете согласие<br/>с
@@ -472,15 +507,20 @@
 						</div>
 						<div class="form-wrap__descr">Заполните форму и мы свяжемся с Вами в течении 20 минут и сориентируем по всем вопросам
 						</div>
+						<input type="text" name="order"/>
 					</div>
-					<div class="label custop-ph-label"><input class="form-wrap__input form-control has-ph-js" type="text" name="name"/><span class="form-wrap__l-title">Название компании</span>
+					<div class="form-wrap__input-wrap form-group label has-ph-js"><input class="form-wrap__input form-control has-ph-js" name="company" type="text" placeholder="" required="required"/><span class="form-wrap__input-title">Название компании</span>
 					</div>
-					<div class="label custop-ph-label"><input class="form-wrap__input form-control has-ph-js" type="email" name="name" require="require"/><span class="form-wrap__l-title">E-mail</span>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group label has-ph-js"><input class="form-wrap__input form-control has-ph-js" name="email" type="email" placeholder="" required="required"/><span class="form-wrap__input-title">E-mail</span>
 					</div>
-					<div class="label custop-ph-label"><input class="form-wrap__input form-control has-ph-js" type="tel" name="name" require="require"/><span class="form-wrap__l-title">Номер телефона</span>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group label has-ph-js"><input class="form-wrap__input form-control has-ph-js" name="tel" type="tel" placeholder="" required="required"/><span class="form-wrap__input-title">Номер телефона</span>
 					</div>
-					<div class="label custop-ph-label"><input class="form-wrap__input form-control has-ph-js" type="text" name="name" require="require"/><span class="form-wrap__l-title">Контактное лицо</span>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group label has-ph-js"><input class="form-wrap__input form-control has-ph-js" name="contact-man" type="text" placeholder="" required="required"/><span class="form-wrap__input-title">Контактное лицо</span>
 					</div>
+					<!-- +e.input-wrap-->
 					<button class="form-wrap__send-btn" type="submit">Отправить
 					</button>
 					<div class="form-wrap__polite">При отправке вы подтверждаете согласие<br/>с
@@ -498,24 +538,30 @@
 						</div>
 						<div class="form-wrap__descr">Заполните форму и мы свяжемся с Вами в течении 20 минут и сориентируем по всем вопросам
 						</div>
+						<input type="text" name="order"/>
 					</div>
-					<div class="label custop-ph-label"><input class="form-wrap__input form-control has-ph-js" type="text" name="name"/><span class="form-wrap__l-title">Название компании</span>
+					<div class="form-wrap__input-wrap form-group label has-ph-js"><input class="form-wrap__input form-control has-ph-js" name="company" type="text" placeholder="" required="required"/><span class="form-wrap__input-title">Название компании</span>
 					</div>
-					<div class="label custop-ph-label"><input class="form-wrap__input form-control has-ph-js" type="text" name="name"/><span class="form-wrap__l-title">ИНН</span>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group label has-ph-js"><input class="form-wrap__input form-control has-ph-js" name="inn" type="text" placeholder=""/><span class="form-wrap__input-title">ИНН</span>
 					</div>
-					<div class="label select-label">
-						<select class="form-wrap__select form-control form-select select-custom select-custom--js has-ph-js" name="work-type">
-							<option class="d-none"></option>
-							<option>Интегратор</option>
-							<option>дилер</option>
-							<option>постащик оборудоания</option>
-							<option>иное</option>
-						</select><span class="form-wrap__l-title">Род деятельности</span>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group label has-ph-js">
+						<select class="form-wrap__input form-select select-custom select-custom--js has-ph-js" name="work-type">
+							<option value="" disabled="disabled" selected="selected"></option>
+							<option value="Интегратор">Интегратор</option>
+							<option value="Дилер">Дилер</option>
+							<option value="Постащик оборудоания">Постащик оборудоания</option>
+							<option value="Иное">Иное</option>
+						</select><span class="form-wrap__input-title">Род деятельности</span>
 					</div>
-					<div class="label custop-ph-label"><input class="form-wrap__input form-control has-ph-js" type="email" name="name" require="require"/><span class="form-wrap__l-title">E-mail</span>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group label has-ph-js"><input class="form-wrap__input form-control has-ph-js" name="email" type="email" placeholder="" required="required"/><span class="form-wrap__input-title">E-mail</span>
 					</div>
-					<div class="label custop-ph-label"><input class="form-wrap__input form-control has-ph-js" type="text" name="name" require="require"/><span class="form-wrap__l-title">Контактное лицо</span>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group label has-ph-js"><input class="form-wrap__input form-control has-ph-js" name="contact-man" type="text" placeholder="" required="required"/><span class="form-wrap__input-title">Контактное лицо</span>
 					</div>
+					<!-- +e.input-wrap-->
 					<button class="form-wrap__send-btn" type="submit">Отправить
 					</button>
 					<div class="form-wrap__polite">При отправке вы подтверждаете согласие<br/>с
@@ -540,6 +586,7 @@
 		<!-- slider libs-->
 		<script src="libs/wowjs/wow.min.js"></script>
 		<script src="libs/swiper/swiper-bundle.min.js"> </script>
+		<script src="libs/select2/js/select2.min.js"> </script>
 		<!-- /slider libs-->
 		<!--script(src="libs/inputmask/inputmask.min.js")-->
 		<!--script(src="js/libs.js")-->

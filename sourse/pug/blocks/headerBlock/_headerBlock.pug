@@ -35,4 +35,5 @@ mixin headerBlock()
 
 mixin pItem(imgNum, delay)
 	+e.p-item.partenrs-item-js.wow.fadeIn.col-6.col-sm-auto(class=`headerBlock__p-item--${imgNum}` data-wow-duration='0.6s' data-wow-delay=`${delay}ms`)
-		img(loading="lazy" src=`img/@2x/partners-${imgNum}.png` alt="")
+		+pic(`partners-${imgNum}.png`,'',0)
+		//- img(loading="lazy" src=`img/@2x/partners-${imgNum}.png` alt="")

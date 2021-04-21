@@ -236,6 +236,17 @@ var Swiper = /*#__PURE__*/function () {
 
   var _proto = Swiper.prototype;
 
+  _proto.setProgress = function setProgress(progress, speed) {
+    var swiper = this;
+    progress = Math.min(Math.max(progress, 0), 1);
+    var min = swiper.minTranslate();
+    var max = swiper.maxTranslate();
+    var current = (max - min) * progress + min;
+    swiper.translateTo(current, typeof speed === 'undefined' ? 0 : speed);
+    swiper.updateActiveIndex();
+    swiper.updateSlidesClasses();
+  };
+
   _proto.emitContainerClasses = function emitContainerClasses() {
     var swiper = this;
     if (!swiper.params._emitClasses || !swiper.el) return;

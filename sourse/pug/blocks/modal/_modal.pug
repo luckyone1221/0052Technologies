@@ -1,61 +1,50 @@
+mixin form-header()
+	+e.title-wrap
+		+e.title.h3.mb-3 Узнайте больше
+		+e.descr Заполните форму и мы свяжемся с Вами в течении 20 минут и сориентируем по всем вопросам
+		input(type="text" name="order")
+
+mixin form-footer()
+	+e.send-btn(type='submit') Отправить
+	+e.polite
+		| При отправке вы подтверждаете согласие
+		br
+		| с
+		|
+		a(href='#') политикой конфиденциальности
 mixin modal()
 	//  start modals
 	+b.modal-win(id="learn-more" style="display: none")
 		+form-wrap
-			+e.title-wrap
-				+e.title.h3.mb-3 Узнайте больше
-				+e.descr Заполните форму и мы свяжемся с Вами в течении 20 минут и сориентируем по всем вопросам
-			+inp3('Название компании', 'text', 'company')
-			+inp3('E-mail', 'email', 'email')(require)
-			+inp3('Контактное лицо', 'text', 'contact-man')(require)
-			+e.send-btn(type='submit') Отправить
-			+e.polite
-				| При отправке вы подтверждаете согласие
-				br
-				| с
-				|
-				a(href='#') политикой конфиденциальности
+			+form-header()
+			+input('', 'text', 'Название компании', 'company')(required)
+			+input('', 'email', 'E-mail', 'email')(required)
+			+input('', 'text', 'Контактное лицо', 'contact-man')(required)
+			+form-footer()
 	+b.modal-win(id="begin-cowork" style="display: none")
 		+form-wrap
-			+e.title-wrap
-				+e.title.h3.mb-3 Узнайте больше
-				+e.descr Заполните форму и мы свяжемся с Вами в течении 20 минут и сориентируем по всем вопросам
-			+inp3('Название компании', 'text', 'company')
-			+inp3('E-mail', 'email', 'email')(require)
-			+inp3('Номер телефона', 'tel', 'tel')(require)
-			+inp3('Контактное лицо', 'text', 'contact-man')(require)
-			+e.send-btn(type='submit') Отправить
-			+e.polite
-				| При отправке вы подтверждаете согласие
-				br
-				| с
-				|
-				a(href='#') политикой конфиденциальности
+			+form-header()
+			+input('', 'text', 'Название компании', 'company')(required)
+			+input('', 'email', 'E-mail', 'email')(required)
+			+input('', 'tel', 'Номер телефона', 'tel')(required)
+			+input('', 'text', 'Контактное лицо', 'contact-man')(required) 
+			+form-footer()
 	// #modal-call
 	+b.modal-win(id="partner-up" style="display: none")
 		+form-wrap
-			+e.title-wrap
-				+e.title.h3.mb-3 Узнайте больше
-				+e.descr Заполните форму и мы свяжемся с Вами в течении 20 минут и сориентируем по всем вопросам
-			+inp3('Название компании', 'text', 'company')
-			+inp3('ИНН', 'text', 'inn')
-			.label.select-label
-				+e.SELECT.select.form-control.form-select.select-custom--js.has-ph-js(name='work-type')
-					option(class="d-none")
-					option Интегратор
-					option дилер
-					option постащик оборудоания
-					option иное
-				+e.SPAN.l-title Род деятельности
-			+inp3('E-mail', 'email', 'email')(require)
-			+inp3('Контактное лицо', 'text', 'contact-man')(require)
-			+e.send-btn(type='submit') Отправить
-			+e.polite
-				| При отправке вы подтверждаете согласие
-				br
-				| с
-				|
-				a(href='#') политикой конфиденциальности
+			+form-header()
+			+input('', 'text', 'Название компании', 'company')(required)
+			+input('', 'text', 'ИНН', 'inn')
+		
+			+input('', 'select', 'Род деятельности', 'work-type')
+				option(value="Интегратор") Интегратор
+				option(value="Дилер") Дилер
+				option(value="Постащик оборудоания") Постащик оборудоания
+				option(value="Иное") Иное
+			+input('', 'email', 'E-mail', 'email')(required)
+			+input('', 'text', 'Контактное лицо', 'contact-man')(required) 
+			+form-footer()
+
 	+b.modal-win(id="modal-thanks" style="display: none")
 		.text-center
 			.h3.mb-3 Спасибо!

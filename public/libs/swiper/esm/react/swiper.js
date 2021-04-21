@@ -54,10 +54,6 @@ var Swiper = /*#__PURE__*/forwardRef(function (_temp, externalElRef) {
       slides = _getChildren.slides,
       slots = _getChildren.slots;
 
-  var changedParams = getChangedParams(passedParams, oldPassedParamsRef.current, slides, oldSlides.current);
-  oldPassedParamsRef.current = passedParams;
-  oldSlides.current = slides;
-
   var onBeforeBreakpoint = function onBeforeBreakpoint() {
     setBreakpointChanged(!breakpointChanged);
   };
@@ -134,6 +130,10 @@ var Swiper = /*#__PURE__*/forwardRef(function (_temp, externalElRef) {
   }, []); // watch for params change
 
   useIsomorphicLayoutEffect(function () {
+    var changedParams = getChangedParams(passedParams, oldPassedParamsRef.current, slides, oldSlides.current);
+    oldPassedParamsRef.current = passedParams;
+    oldSlides.current = slides;
+
     if (changedParams.length && swiperRef.current && !swiperRef.current.destroyed) {
       updateSwiper(swiperRef.current, slides, passedParams, changedParams);
     }

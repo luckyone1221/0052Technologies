@@ -147,9 +147,7 @@ function eventHandler() {
 	JSCCommon.sendForm();
 	JSCCommon.checkEmptyVal();
 
-	$('.has-ph-js').blur(JSCCommon.checkEmptyVal);
-	$('.has-ph-js').each(JSCCommon.checkEmptyVal);
-	$('.has-ph-js.select-custom--js').on('select', JSCCommon.checkEmptyVal);
+
 
 	//
 	let topNav = document.querySelector('.top-nav  ');
@@ -193,13 +191,17 @@ function eventHandler() {
 			$('.menu-mobile--js').removeClass('active');
 		}
 	}
-	//sliders
-	let tabsSlider = new Swiper('.tabs-slider-js', {
+
+	let def = {
 		slidesPerView: 'auto',
 		freeMode: true,
 		freeModeMomentum: true,
 		watchOverflow: true,
 
+	}
+	//sliders
+	let tabsSlider = new Swiper('.tabs-slider-js', {
+		...def,
 		breakpoints:{
 			0:{
 				spaceBetween: 20,
@@ -213,13 +215,9 @@ function eventHandler() {
 		},
 
 	});
-
+	
 	let sProjectsTabsSlider = new Swiper('.sProject-tabs-slider-js', {
-		slidesPerView: 'auto',
-		freeMode: true,
-		freeModeMomentum: true,
-		watchOverflow: true,
-
+		...def,
 		breakpoints:{
 			0:{
 				spaceBetween: 20,
@@ -236,6 +234,11 @@ function eventHandler() {
 	});
 	wow.init();
 	//end luckyone js
+
+	$('.has-ph-js').blur(JSCCommon.checkEmptyVal);
+	$('.has-ph-js').each(JSCCommon.checkEmptyVal);
+	$('.select-custom--js').on('select2:select', JSCCommon.checkEmptyVal);
+	$('.select-custom--js').select2();
 };
 if (document.readyState !== 'loading') {
 	eventHandler();
