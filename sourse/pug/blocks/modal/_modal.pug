@@ -2,7 +2,7 @@ mixin form-header()
 	+e.title-wrap
 		+e.title.h3.mb-3 Узнайте больше
 		+e.descr Заполните форму и мы свяжемся с Вами в течении 20 минут и сориентируем по всем вопросам
-		input(type="text" name="order")
+		input(type="hidden" name="order")
 
 mixin form-footer()
 	+e.send-btn(type='submit') Отправить
