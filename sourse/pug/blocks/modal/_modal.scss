@@ -35,7 +35,9 @@
 			input.not-empty + span,
 			input:focus + span,
 			textarea.not-empty + span,
-			textarea:focus + span {
+			textarea:focus + span ,
+			select.not-empty + span,
+			select:focus + span {
 				top: rem(10px) !important;
 				font-size: rem(12) !important;
 				color: $brown!important;
@@ -46,6 +48,7 @@
 		&__l-title {
 			@include mt();
 			position: absolute;
+			pointer-events: none;
 
 			top: calc(#{$input-padding-y});
 			left: calc(#{$input-padding-x} + #{$input-border-width});

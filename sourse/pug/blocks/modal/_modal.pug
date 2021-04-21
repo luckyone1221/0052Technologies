@@ -41,11 +41,12 @@ mixin modal()
 			+inp3('ИНН', 'text', 'inn')
 			.label.select-label
 				+e.SELECT.select.form-control.form-select.select-custom--js.has-ph-js(name='work-type')
+					option(class="d-none")
 					option Интегратор
 					option дилер
 					option постащик оборудоания
 					option иное
-				+e.SPAN.l-title--select Род деятельности
+				+e.SPAN.l-title Род деятельности
 			+inp3('E-mail', 'email', 'email')(require)
 			+inp3('Контактное лицо', 'text', 'contact-man')(require)
 			+e.send-btn(type='submit') Отправить
