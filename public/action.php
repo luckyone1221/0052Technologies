@@ -37,7 +37,7 @@ $html = '
     }
 
     if (!empty($_POST['name'])) {
-        $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;">Name:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['name'] . '</b></td></tr>';
+        $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;">Контактное лицо: </td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['name'] . '</b></td></tr>';
     }
     
     if (!empty($_POST['tel'])) {
@@ -46,6 +46,9 @@ $html = '
     
     if (!empty($_POST['email'])) {
         $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;"> Email:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['email'] . '</b></td></tr>';
+    }
+    if (!empty($_POST['inn'])) {
+        $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;"> ИНН:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['inn'] . '</b></td></tr>';
     }
 
     if (!empty($_POST['text'])) {

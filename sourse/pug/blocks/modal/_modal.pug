@@ -19,7 +19,7 @@ mixin modal()
 			+form-header()
 			+input('', 'text', 'Название компании', 'company')(required)
 			+input('', 'email', 'E-mail', 'email')(required)
-			+input('', 'text', 'Контактное лицо', 'contact-man')(required)
+			+input('', 'text', 'Контактное лицо', 'name')(required)
 			+form-footer()
 	+b.modal-win(id="begin-cowork" style="display: none")
 		+form-wrap
@@ -27,7 +27,7 @@ mixin modal()
 			+input('', 'text', 'Название компании', 'company')(required)
 			+input('', 'email', 'E-mail', 'email')(required)
 			+input('', 'tel', 'Номер телефона', 'tel')(required)
-			+input('', 'text', 'Контактное лицо', 'contact-man')(required) 
+			+input('', 'text', 'Контактное лицо', 'name')(required) 
 			+form-footer()
 	// #modal-call
 	+b.modal-win(id="partner-up" style="display: none")
@@ -42,7 +42,7 @@ mixin modal()
 				option(value="Постащик оборудоания") Постащик оборудоания
 				option(value="Иное") Иное
 			+input('', 'email', 'E-mail', 'email')(required)
-			+input('', 'text', 'Контактное лицо', 'contact-man')(required) 
+			+input('', 'text', 'Контактное лицо', 'name')(required) 
 			+form-footer()
 
 	+b.modal-win(id="modal-thanks" style="display: none")

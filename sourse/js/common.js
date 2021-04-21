@@ -108,14 +108,19 @@ const JSCCommon = {
 							// console.log(modal.querySelector(elem).tagName)
 						}
 					}
-					setValue(data.title, '.ttu');
+					setValue(data.title, '.form-wrap__title');
 					setValue(data.text, '.after-headline');
 					setValue(data.btn, '.btn');
-					setValue(data.order, '.order');
+					setValue(data.order, '[name="order"]');
+
 				})
 			})
 		}
 		if (linkModal) addData();
+		$(".sProjects-box__learn-more-btn").each(function(){
+			$(this).attr('data-order','Узнать больше о: ' + $(this).parents(".sProjects-box").find(".sProjects-box__sub-title").text())
+		
+		})
 	},
 	// /modalCall
 	heightwindow() {
@@ -136,6 +141,14 @@ const JSCCommon = {
 			? $(this).addClass('not-empty')
 			: $(this).removeClass('not-empty')
 	},
+	inputMask() {
+		// mask for input
+		let InputTel = [].slice.call(document.querySelectorAll('input[type="tel"]'));
+		InputTel.forEach(function (element) {
+			element.setAttribute("pattern", "[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}")
+		});
+		Inputmask("+9(999)999-99-99", { showMaskOnHover: false, }).mask(InputTel);
+	},
 };
 const $ = jQuery;
 
@@ -146,6 +159,7 @@ function eventHandler() {
 	JSCCommon.modalCall();
 	JSCCommon.sendForm();
 	JSCCommon.checkEmptyVal();
+	JSCCommon.inputMask();
 
 
 
