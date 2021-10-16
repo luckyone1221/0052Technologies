@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .icon {
 	display: inline-block;
 	width: 1em;
@@ -6,34 +8,34 @@
 }
 
 .icon-basket {
-	font-size:(24/10)*1rem;
-	width:(22/24)*1em;
+	font-size:math.div(24,10)*1rem;
+	width: math.div(22,24)*1em;
 }
 .icon-check {
-	font-size:(27/10)*1rem;
-	width:(27/27)*1em;
+	font-size:math.div(27,10)*1rem;
+	width: math.div(27,27)*1em;
 }
 .icon-fb {
-	font-size:(24/10)*1rem;
-	width:(24/24)*1em;
+	font-size:math.div(24,10)*1rem;
+	width: math.div(24,24)*1em;
 }
 .icon-instagram {
-	font-size:(24/10)*1rem;
-	width:(24/24)*1em;
+	font-size:math.div(24,10)*1rem;
+	width: math.div(24,24)*1em;
 }
 .icon-telegram {
-	font-size:(16/10)*1rem;
-	width:(16/16)*1em;
+	font-size:math.div(16,10)*1rem;
+	width: math.div(16,16)*1em;
 }
 .icon-viber {
-	font-size:(16/10)*1rem;
-	width:(16/16)*1em;
+	font-size:math.div(16,10)*1rem;
+	width: math.div(16,16)*1em;
 }
 .icon-vk {
-	font-size:(24/10)*1rem;
-	width:(24/24)*1em;
+	font-size:math.div(24,10)*1rem;
+	width: math.div(24,24)*1em;
 }
 .icon-whatsapp {
-	font-size:(16/10)*1rem;
-	width:(16/16)*1em;
+	font-size:math.div(16,10)*1rem;
+	width: math.div(16,16)*1em;
 }

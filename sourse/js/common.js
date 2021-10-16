@@ -57,12 +57,9 @@ const JSCCommon = {
 				data: data,
 			}).done(function (data) {
 
-				$.fancybox.close();
+				Fancybox.close();
 				console.log('open ty');
-				$.fancybox.open({
-					src: '#modal-thanks',
-					type: 'inline'
-				});
+				Fancybox.show([{ src: "#modal-thanks", type: "inline" }]);
 				// window.location.replace("/thanks.html");
 				setTimeout(function () {
 					// Done Functions
@@ -73,26 +70,29 @@ const JSCCommon = {
 		});
 	},
 	modalCall() {
+		const link = ".link-modal-js";
 
-		$(".link-modal-js").fancybox({
+		Fancybox.bind(link, {
 			arrows: false,
 			infobar: false,
 			touch: false,
+			infinite: false,
+			dragToClose: false,
 			type: 'inline',
 			autoFocus: false,
-			i18n: {
-				en: {
-					CLOSE: "Закрыть",
-					NEXT: "Вперед",
-					PREV: "Назад",
-				},
+			l10n: {
+				Escape: "Закрыть",
+				NEXT: "Вперед",
+				PREV: "Назад",
 			},
 		});
-		$(".modal-close-js").click(function () {
-			$.fancybox.close();
+		document.querySelectorAll(".modal-close-js").forEach(el => {
+			el.addEventListener("click", () => {
+				Fancybox.close();
+			})
 		})
-		$.fancybox.defaults.backFocus = false;
-		const linkModal = document.querySelectorAll('.link-modal-js');
+		// fancybox.defaults.backFocus = false;
+		const linkModal = document.querySelectorAll(link);
 		function addData() {
 			linkModal.forEach(element => {
 				element.addEventListener('click', () => {
@@ -108,19 +108,14 @@ const JSCCommon = {
 							// console.log(modal.querySelector(elem).tagName)
 						}
 					}
-					setValue(data.title, '.form-wrap__title');
+					setValue(data.title, '.ttu');
 					setValue(data.text, '.after-headline');
 					setValue(data.btn, '.btn');
-					setValue(data.order, '[name="order"]');
-
+					setValue(data.order, '.order');
 				})
 			})
 		}
 		if (linkModal) addData();
-		$(".sProjects-box__learn-more-btn").each(function () {
-			$(this).attr('data-order', 'Узнать больше о: ' + $(this).parents(".sProjects-box").find(".sProjects-box__sub-title").text())
-
-		})
 	},
 	// /modalCall
 	heightwindow() {

@@ -1,23 +1,18 @@
 module.exports = () => {
 	$.gulp.task('sass', () => {
-		var processors = [
-			// $.pcmq,
-			// $.postcssCustomProperties,
+		const processors = [  
 			$.autoprefixer(),
 			$.nested(),
 			$.cssnano(),
-			// $.postcssMerge(),
-			// $.cmq(),
-			// $.flexGapPolyfill(),
-			// $.postcssPresetEnv(),
+			$.gcmq(),
 		];
 		return $.gulp.src($.sourse + '/sass/main.scss')
 			.pipe($.sassGlob())
-			.pipe($.sass().on("error", $.notify.onError()))
-			.pipe($.gcmq())
-			.pipe($.postcss(processors))
+			.pipe($.sass({ outputStyle: 'compressed', indentedSyntax: false, errLogToConsole: true }))
+			.pipe($.postcss(processors, { syntax: $.syntax }))
+			// .pipe($.gcmq())
 			.pipe($.rename({ suffix: '.min', prefix: '' }))
-				.pipe($.gulp.dest($.public + '/css'))
+			.pipe($.gulp.dest($.public + '/css'))
 			.pipe($.browserSync.stream());
 	});
 
