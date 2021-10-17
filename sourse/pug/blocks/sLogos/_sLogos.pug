@@ -2,8 +2,11 @@ mixin sLogos(data)
 	// start sLogos
 	+b.SECTION.sLogos.section#sLogos&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sLogos
+			+b.section-title
+				h2 Наши партнеры и&nbsp;клиенты
 				
-			.row
+			+e.row.row
+				- for (var i = 1; i < 5; i++)
+					.col-lg-auto.col-md-3.col-6
+						+pic(`logo-${i}.png`,'',0)
 	// end sLogos

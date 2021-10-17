@@ -2,8 +2,19 @@ mixin sDecision(data)
 	// start sDecision
 	+b.SECTION.sDecision.section#sDecision&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sDecision
-				
+			+pic("gerl.png",'',0).d-none.d-xl-block
 			.row
+				.col-lg
+					+b.section-title
+						h2 Наше решение  для крупного  b2b или b2g
+						h6 Мы&nbsp;можем создать внутренний закрытый контур данных для вашей организации. Информация будет храниться  только у&nbsp;вас. Поможем спрогнозировать закупки на&nbsp;год вперед. Ясная картина, о&nbsp;требуемых средствах и&nbsp;бюджетах
+						p Для оценки стоимости индивидуального решения нужна информация о&nbsp;количестве зданий и&nbsp;размещаемых объектов. А&nbsp;так&nbsp;же потребуется&nbsp;ли проводить обучение ваших специалистов.
+				.col-lg-auto
+					+form-wrap
+						+input('','text','ФИО')
+						+input('','text','ИНН')
+						+input('','email','E-mail')
+						+input('','tel','Телефон')
+						+e.btn(type="submit") Отправить запрос
+						+e.policy При отправке вы&nbsp;подтверждаете согласие  с&nbsp;политикой конфиденциальности
 	// end sDecision

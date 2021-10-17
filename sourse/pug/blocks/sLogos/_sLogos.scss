@@ -4,6 +4,12 @@
 		// --sPB: ;
 		// --sTPB: ;
 
+		&__row{
+			justify-content: space-between;
+			align-items: center;
+			text-align: center;
+		}
+
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}

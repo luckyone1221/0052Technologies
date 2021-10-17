@@ -3,11 +3,15 @@
 		// --sPT: ;
 		// --sPB: ;
 		// --sTPB: ;
+		picture{
+			text-align: center;
+		}
 		img{
 			@include media-breakpoint-up(xl) {
 				
-				left: 40px;
-				max-width: calc(50%);
+				left: 30px;
+				max-width: none;
+				top: -45px;
 			}
 			@include media-breakpoint-up(md) {
 				
@@ -88,4 +92,10 @@
 	@include media-breakpoint-between(md, xl) {}
 	@include media-breakpoint-only(xl) {}
 	@include media-breakpoint-down(xl) {}
+	@include media-breakpoint-down(sm) {
+		.container{
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
 } // end.sReadySet

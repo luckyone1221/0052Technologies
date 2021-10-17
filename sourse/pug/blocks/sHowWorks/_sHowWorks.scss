@@ -3,7 +3,33 @@
 		// --sPT: ;
 		// --sPB: ;
 		// --sTPB: ;
-
+		.text-center img{
+		margin-top: rem(-30);
+		margin-bottom: 5%;
+	}
+	&__item{
+		background: #E2E7ED;
+		padding: calc(var(--bs-gutter-x) + 10px); 
+		padding-bottom: var(--bs-gutter-x);
+		min-height: 100%;
+		.row{
+			margin-bottom: rem(40);
+		}
+		.col{
+			p{
+				font-size: rem(20);
+				font-weight: bold;
+				max-width: rem(380);
+			}
+		}
+	}
+		.row{
+	 
+		@include media-breakpoint-up(xxl) {
+			--bs-gutter-x: 40px;
+		}
+		--bs-gutter-y: var(--bs-gutter-x);
+	} 
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}

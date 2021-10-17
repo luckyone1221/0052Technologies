@@ -2,8 +2,14 @@ mixin sSecurityControl(data)
 	// start sSecurityControl
 	+b.SECTION.sSecurityControl.section#sSecurityControl&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sSecurityControl
-				
-			.row
+			+b.section-title
+				h2 Безопасность и контроль
+			+e.inner.bg-wrap
+				+pic("bg.jpg",'bg').picture-bg
+				+e.content
+					p На&nbsp;входе/выходе&nbsp;&mdash; устанавливается от&nbsp;4-8 считывателей на&nbsp;вход(выход) или круговые антенны и&nbsp;загружаются в&nbsp;считыватель серийные номера на&nbsp;запрет выноса, в&nbsp;случае появления этой метки в&nbsp;зоне контроля срабатывает сигнализация, считыватель подает на&nbsp;выход напряжение 12В.
+					+e.caption
+						+e.caption-title Рекомендация: 
+						p для безопасности и&nbsp;отсутствия воздействия запускать сканирование меток, только на&nbsp;кассах при сканировании и&nbsp;оплате товара. Метки рекомендуют клеить на&nbsp;открытые участки оборудования, чтобы они не&nbsp;стояли ребром
+
 	// end sSecurityControl

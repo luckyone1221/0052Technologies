@@ -11,14 +11,14 @@ extends layout/main.pug
 include ../blocks/sActions/_sActions.pug
 include ../blocks/sWays/_sWays.pug
 include ../blocks/sReadySet/_sReadySet.pug
-include ../blocks/sMetrics/_sMetrics.pug
-include ../blocks/sMetrics/_sMetrics.pug
+include ../blocks/sMetrics/_sMetrics.pug 
 include ../blocks/sDecision/_sDecision.pug
 include ../blocks/sOffer/_sOffer.pug
 include ../blocks/sHowWorks/_sHowWorks.pug
 include ../blocks/sSecurityControl/_sSecurityControl.pug
 include ../blocks/sFurtherDevelopment/_sFurtherDevelopment.pug
 include ../blocks/sLogos/_sLogos.pug
+include ../blocks/sWhatYouGet/_sWhatYouGet.pug
 
 block variables
 	- let  mainPage= null 
@@ -35,12 +35,12 @@ block pagecontent
 	+sActions
 	+sWays
 	+sReadySet
-	+sMetrics
-	+sMetrics
+	+sMetrics 
 	+sDecision
 	+sOffer
 	+sHowWorks
 	+sSecurityControl
+	+sWhatYouGet
 	+sFurtherDevelopment
 	+sLogos
 	+footer()

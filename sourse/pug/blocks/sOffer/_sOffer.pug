@@ -2,8 +2,23 @@ mixin sOffer(data)
 	// start sOffer
 	+b.SECTION.sOffer.section#sOffer&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sOffer
+			+b.section-title
+				h2 Что мы предлагаем
 				
-			.row
+			ol
+				li SaaS платформа *- программное обеспечение как услуга 
+					span * software as a service 
+				li Терминал и RFID метки
+				li Аппаратный Комплекс по работе с RFID метками
+				li Поддержка Help&nbsp;Desk
+			+e.row.row
+				+e.col.col-sm
+					+e.item
+						+pic("item-1.png",'',0)
+						p #[strong Приказ Минфина РФ&nbsp;от&nbsp;13.06.1995 &#8470;&nbsp;49&nbsp;(ред. От&nbsp;08.11.2010)]  &laquo;Об&nbsp;утверждении Методических указаний по  инвентаризации имущества и&nbsp;финансовых обязательств&raquo; организация обязана проводить инвентаризацию основных средств не&nbsp;менее одного раза в&nbsp;год.
+
+				+e.col.col-sm
+					+e.item
+						+pic("item-2.png",'',0)
+						p Мы&nbsp;можем поставлять оборудование для работы  с&nbsp;системой и&nbsp;внедрения  в&nbsp;учреждение
 	// end sOffer

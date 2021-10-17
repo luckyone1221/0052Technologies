@@ -2,8 +2,20 @@ mixin sHowWorks(data)
 	// start sHowWorks
 	+b.SECTION.sHowWorks.section#sHowWorks&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sHowWorks
-				
-			.row
+			h2 Как это работает
+			.text-center
+				+pic("how.png")
+			+e.row.row
+				mixin item(i, t, p)
+					.col-sm-6
+						+e.item
+							.row
+								.col-auto
+									img(src=`img/svg/sHowWorks-${i}.svg` laoding="lazy", alt="")
+								.col
+									p!= t
+							p!= p
+				+item(`1`,`Предоставляем возможность  любой компании использовать  сервис в&nbsp;нашем облаке`,`В&nbsp;минимальные сроки с&nbsp;минимальными вложениями`)
+				+item(`2`,`Подходящие решение подсчета техники и&nbsp;оборудования для арендных компаний`,`Быстрый подсчет техники после выставок`)
+
 	// end sHowWorks
