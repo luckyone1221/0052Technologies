@@ -1,9 +1,17 @@
 // start .headerBlock
 .headerBlock {
 	//overflow: hidden;
+	background: linear-gradient(179.46deg, #FFFFFF -0.74%, rgba(255, 255, 255, 0) 37.34%), linear-gradient(358.14deg, #FFFFFF 0.69%, rgba(255, 255, 255, 0) 28.24%), linear-gradient(85.66deg, #FFFFFF 2.97%, rgba(255, 255, 255, 0) 72.71%);
 	position: relative;
 	z-index: 1;
-
+	.picture-bg{
+		max-width: calc(1200 / 1920 * 100%);
+		left: auto;
+		right: 0;
+	}
+	p{
+		max-width: rem(540);
+	}
 	&__bg{
 		position: absolute;
 		z-index: -1;
@@ -45,8 +53,8 @@
 			justify-content: flex-end;
 			align-items: flex-start;
 
-			width: rem(750*2/3);
-			height: rem(1264*2/3);
+			width: rem(750*.66);
+			height: rem(1264*.66);
 			@include media-breakpoint-up(xl){
 				width: 750px;
 				height: 1264px;
@@ -82,7 +90,7 @@
 	.section-title{
 		h1{
 			font-weight: 900;
-			line-height: (68/64);
+			line-height: calc(68/64);
 
 			font-size: rem(40);
 			margin-bottom: rem(25);

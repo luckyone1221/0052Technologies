@@ -92,11 +92,11 @@ module.exports = function () {
 				},
 					{
 						// Produce @2x images
-						resize: {width: '50%'},
+						width: '50%',
 						quality: 75, progressive: true, rename: { prefix: '@1x/', },
 					},
 					{
-						resize: {width: '50%'},
+						width: '50%',
 						webp: { quality: 100 }, progressive: true, rename: { prefix: '@1x/webp/', extname: '.webp' },
 					}
 			]

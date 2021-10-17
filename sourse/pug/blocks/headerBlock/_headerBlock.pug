@@ -1,3 +1,7 @@
+mixin pItem(imgNum, delay)
+	+e.p-item.partenrs-item-js.wow.fadeIn.col-6.col-sm-auto(class=`headerBlock__p-item--${imgNum}` data-wow-duration='0.6s' data-wow-delay=`${delay}ms`)
+		+pic(`partners-${imgNum}.png`,'',0)
+		//- img(loading="lazy" src=`img/@2x/partners-${imgNum}.png` alt="")
 mixin headerBlock()
 	// start headerBlock
 	+b.headerBlock.section#headerBlock&attributes(attributes)
@@ -33,7 +37,25 @@ mixin headerBlock()
 						+pItem(6, '1200')
 	// end headerBlock
 
-mixin pItem(imgNum, delay)
-	+e.p-item.partenrs-item-js.wow.fadeIn.col-6.col-sm-auto(class=`headerBlock__p-item--${imgNum}` data-wow-duration='0.6s' data-wow-delay=`${delay}ms`)
-		+pic(`partners-${imgNum}.png`,'',0)
-		//- img(loading="lazy" src=`img/@2x/partners-${imgNum}.png` alt="")
+mixin headerBlock2()
+	// start headerBlock
+	+b.headerBlock.section#headerBlock.bg-wrap&attributes(attributes) 
+		+pic("head-bg.png",'bg',0).picture-bg
+		.container
+			.row.gy-5
+				+e.txt-col.col-lg-6
+					+b.section-title
+						h1  Единая  информационно  инвентаризационная система
+						p  ЕИИС&nbsp;&mdash; это полноценная платформа упрощающая контроль и&nbsp;учёт материальных объектов, а&nbsp;также удобное использование собранной информации в&nbsp;аналитических целях. Поможет решить экономические задачи и&nbsp;сократить время оценки и&nbsp;обработки объектов и&nbsp;устройств
+					+e.btn.link-modal-js(href='#begin-cowork' data-title="Начать сотрудничать" data-order="Форма на первом экране: начать сотрудничать") Начать сотрудничать
+				//- +e.partners-col.col-lg.ms-lg-auto
+				//- 	+e.p-title Клиенты и партнеры:
+				//- 	+e.p-items.row.gy-3.gy-sm-0
+				//- 		+pItem(1, '200')
+				//- 		+pItem(2, '400')
+				//- 		+pItem(3, '600')
+				//- 		+pItem(4, '800')
+				//- 		+pItem(5, '1000')
+				//- 		+pItem(6, '1200')
+	// end headerBlock
+

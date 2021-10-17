@@ -7,14 +7,14 @@ mixin sProjects(data)
 			+b.section-title
 				h2 Проекты
 			+b.tabs
-				+e.caption.swiper-container.sProject-tabs-slider-js.gallery-thumbs2
+				+e.caption.swiper.sProject-tabs-slider-js.gallery-thumbs2
 					.swiper-wrapper
 						+sTabsSlide('worldskill')(class="active")
 						+sTabsSlide('РОстелеком')
 						+sTabsSlide('Росбанк')
 						+sTabsSlide('Компания')
 						+sTabsSlide('Еще компания')
-				+e.wrap.gallery-top2.swiper-container
+				+e.wrap.gallery-top2.swiper
 					.swiper-wrapper
 						mixin slide()
 							+e.slide.swiper-slide&attributes(attributes) 

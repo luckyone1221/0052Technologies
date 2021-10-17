@@ -10,11 +10,11 @@
 	--box-bb-col: #{$gray-110};
 	border-bottom: 1px solid transparent;
 
-	background: $white;
 	@include media-breakpoint-up(xl){
 		background: transparent;
 	}
 	&.fixed{
+		background: $white;
 		background: $white;
 		border-bottom: 1px solid $gray-110;
 		box-shadow: 0 0 10px 0 rgba($dark, .1);
@@ -40,7 +40,7 @@
 			padding: rem(24px) 0;
 		}
 
-		border-bottom: 1px solid var(--box-bb-col, #{$gray-110});
+		// border-bottom: 1px solid var(--box-bb-col, #{$gray-110});
 	}
 	&__row{
 

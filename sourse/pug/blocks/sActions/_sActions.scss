@@ -1,0 +1,59 @@
+// start .sActions
+.sActions {
+		// --sPT: ;
+		// --sPB: ;
+		// --sTPB: ;
+	ol{
+		list-style: none;
+		counter-reset: num;
+		padding-left: 0;
+		@include media-breakpoint-up(lg) {
+		display: flex;
+	}
+	}
+	li{
+		@include media-breakpoint-up(lg) {
+
+			max-width: 55%;
+		}
+		position: relative; 
+		@include rfs(40px);
+		font-weight: 900;
+		@include media-breakpoint-up(lg) {
+			
+			padding-top: rem(110);
+			padding-left: rem(127);
+		}
+		padding-top: rem(60);
+		@include media-breakpoint-up(sm) {
+		padding-left: rem(87);
+		}
+		&:first-child{
+			margin-right: -3%;
+		}
+		&::before {
+			content: '0'counter(num);
+			counter-increment: num;
+			@include rfs(244px);
+			color: #212633; 
+			opacity: 0.1;
+			position: absolute;
+			left: 0;
+			z-index: -1;
+			top: 0;
+			line-height: 1;
+		}
+		span{
+			background-color: $primary;
+			padding: em(2) em(4);
+		}
+		line-height: 120%;
+	}
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sActions

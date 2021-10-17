@@ -15,6 +15,11 @@
 		--fontSizeBase: #{$em-base};
 	}
 
+	--topHeight: 82px;
+	@include media-breakpoint-up(xxl){
+		--topHeight: 98px;
+	}
+
 	--swiperArrowSize: #{rem(68)};
 	--swiperArrowPosition: calc(-1 * var(--swiperArrowSize) / 2);
 	--swiperBorderColorDef: var(--bs-primary);

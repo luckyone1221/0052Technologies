@@ -1,0 +1,29 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sCards/_sCards.pug
+include ../blocks/sTabs/_sTabs.pug
+include ../blocks/sProjects/_sProjects.pug
+include ../blocks/sDesisions/_sDesisions.pug
+include ../blocks/sColor/_sColor.pug
+
+block variables
+	- let  mainPage= null 
+	- let  bg= null
+
+block title
+	- let  title= 'title'
+	title= title
+block pagecontent
+	+mob-mnu()
+	+header()
+		+top-nav()
+	+headerBlock()
+	+sCards()
+	+sTabs()
+	+sProjects()
+	+sDesisions()
+	+sColor()
+	+footer()

@@ -12,13 +12,13 @@ mixin sTabs(data)
 				.container
 					+e.row.row.gy-4
 						.col-lg-8.tabs-slider-parent-js
-							+e.caption.swiper-container.tabs-slider-js.gallery-thumbs
+							+e.caption.swiper.tabs-slider-js.gallery-thumbs
 								.swiper-wrapper
 									+sTabsSlide('О нас')(class="active")
 									+sTabsSlide('Как мы работаем')
 									+sTabsSlide('Технологии')
 									+sTabsSlide('Решения')
-							+e.wrap.gallery-top.swiper-container
+							+e.wrap.gallery-top.swiper
 								.swiper-wrapper
 									mixin slide()
 										+e.slide.swiper-slide&attributes(attributes)  

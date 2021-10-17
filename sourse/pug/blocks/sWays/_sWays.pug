@@ -1,0 +1,13 @@
+mixin sWays(data)
+	// start sWays
+	+b.SECTION.sWays.section#sWays&attributes(attributes)
+		mixin item(i,t,p)
+			+e.item.container
+				+pic(`sWays-${i}.png`)
+				+e.text
+					h2!= t
+					p!= p 
+		+item(`1`,`Управление  везде где есть  компьютер  или планшет`,`Заказчик может управлять <span>зданием</span>, районом  или&nbsp;целым <span>городом</span>. Система масштабируется  без привязки к&nbsp;месту.`)
+		+item(`2`,`Терминал `,`Наше ПО&nbsp;позволяет считывать  и&nbsp;записывать метки даже если <span>нет подключения к&nbsp;интернету.</span>  Даем возможность: Проводить  инвентаризацию помещений как по отдельности так и&nbsp;комплексно.`)
+
+	// end sWays

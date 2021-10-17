@@ -1,0 +1,111 @@
+// start .sWays
+.sWays {
+		// --sPT: ;
+		// --sPB: ;
+		// --sTPB: ;
+		h2{
+			margin-bottom: var(--sTPB);
+		}
+		&__item{
+		@include media-breakpoint-up(lg) {
+
+			display: flex;
+			position: relative;
+			align-items: center;
+			justify-content: space-between;
+		}
+			margin-bottom: rem(100);
+			img{
+				// position: absolute;
+				@include media-breakpoint-up(xl) {
+					
+					max-width: none;
+				}
+			}
+			position: relative;
+			&::before{
+				content: '';
+				position: absolute;
+				background: #212633;
+				opacity: 0.45;
+				filter: blur(200px);
+				transform:  rotate(90deg);
+				top: 0;
+				width: (1340px * .5);
+				height: (740px * .5);
+				
+				}
+				&:nth-child(odd) {
+					&::before{
+
+						right: 90%;
+					}
+				}
+				&:nth-child(even){
+					&::before{
+						left: 90%;
+					}
+				}
+		}
+		@include media-breakpoint-up(lg) {
+			
+			&__text{
+				flex:  0 0 auto;
+				width: rem(340);
+			}
+		}
+		p{
+			span{
+				background-color: $primary; 
+				padding: em(2) em(4);
+			}
+			@include media-breakpoint-up(lg) {
+			max-width: rem(300);
+			}
+			font-size: rem(20);
+			color: #6A6A6A;
+		}
+		@include media-breakpoint-down(lg) {
+			picture{
+				text-align: center;
+				margin-bottom: 2rem;
+			}
+		}
+		&__item:nth-child(odd) picture{
+			width: auto;
+			display: block;
+			margin-left: rem(-100);
+			margin-bottom: 0;
+			@include media-breakpoint-down(lg) { 
+				margin-right: rem(-100);
+			}
+			@include media-breakpoint-down(sm) {
+				margin-left: -30px;
+				margin-right: -45px;
+			}
+		}	
+		@include media-breakpoint-up(lg) {
+
+			&__item:nth-child(even) picture{
+				width: 50%;
+				text-align: center;
+			}
+			&__item:nth-child(even) &__text{
+				// margin-right: auto;
+				margin-right: rem(30);
+			}
+			&__item:nth-child(even) {
+				flex-direction: row-reverse;
+				p{
+					max-width: rem(370);
+				}
+			}
+		}
+			@include media-breakpoint-up(xl) {}
+			@include media-breakpoint-up(lg) {}
+			@include media-breakpoint-up(md) {}
+			@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sWays

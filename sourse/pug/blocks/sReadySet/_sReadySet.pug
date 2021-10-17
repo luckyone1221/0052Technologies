@@ -1,0 +1,19 @@
+mixin sReadySet(data)
+	// start sReadySet
+	+b.SECTION.sReadySet.section#sReadySet&attributes(attributes)
+		.container
+			+e.inner
+				+e.text
+					h2 Закажи готовый  комплект
+					+pic(`sReadySet-img.png`)
+					ul
+						li 500 меток UHF RFID
+						li Терминал сбора данных
+						li Лицензия на использование системы управления
+					.row
+						+e.price.col-xl-6.col-auto
+							strong 125 000 
+							| руб
+						.col-xl-6.col-auto 
+							+e.btn(href="#") Заказать комплект
+	// end sReadySet

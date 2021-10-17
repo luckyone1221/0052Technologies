@@ -1,13 +1,24 @@
 extends layout/main.pug
 
 
-include ../blocks/sContent/_sContent.pug
-include ../blocks/sContact/_sContact.pug
-include ../blocks/sCards/_sCards.pug
-include ../blocks/sTabs/_sTabs.pug
-include ../blocks/sProjects/_sProjects.pug
-include ../blocks/sDesisions/_sDesisions.pug
-include ../blocks/sColor/_sColor.pug
+//- include ../blocks/sContent/_sContent.pug
+//- include ../blocks/sContact/_sContact.pug
+//- include ../blocks/sCards/_sCards.pug
+//- include ../blocks/sTabs/_sTabs.pug
+//- include ../blocks/sProjects/_sProjects.pug
+//- include ../blocks/sDesisions/_sDesisions.pug
+//- include ../blocks/sColor/_sColor.pug
+include ../blocks/sActions/_sActions.pug
+include ../blocks/sWays/_sWays.pug
+include ../blocks/sReadySet/_sReadySet.pug
+include ../blocks/sMetrics/_sMetrics.pug
+include ../blocks/sMetrics/_sMetrics.pug
+include ../blocks/sDecision/_sDecision.pug
+include ../blocks/sOffer/_sOffer.pug
+include ../blocks/sHowWorks/_sHowWorks.pug
+include ../blocks/sSecurityControl/_sSecurityControl.pug
+include ../blocks/sFurtherDevelopment/_sFurtherDevelopment.pug
+include ../blocks/sLogos/_sLogos.pug
 
 block variables
 	- let  mainPage= null 
@@ -20,10 +31,16 @@ block pagecontent
 	+mob-mnu()
 	+header()
 		+top-nav()
-	+headerBlock()
-	+sCards()
-	+sTabs()
-	+sProjects()
-	+sDesisions()
-	+sColor()
+	+headerBlock2()
+	+sActions
+	+sWays
+	+sReadySet
+	+sMetrics
+	+sMetrics
+	+sDecision
+	+sOffer
+	+sHowWorks
+	+sSecurityControl
+	+sFurtherDevelopment
+	+sLogos
 	+footer()
