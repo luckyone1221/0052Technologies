@@ -3,8 +3,9 @@ mixin sHowWorks(data)
 	+b.SECTION.sHowWorks.section#sHowWorks&attributes(attributes)
 		.container
 			h2 Как это работает
-			.text-center
-				+pic("how.png")
+		.text-center.container-fluid
+			+pic("how.png")
+		.container
 			+e.row.row
 				mixin item(i, t, p)
 					.col-sm-6
