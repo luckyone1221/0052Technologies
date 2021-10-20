@@ -20,16 +20,15 @@ html {
 	// overflow-x: hidden;
 }
 html{
-	-webkit-text-size-adjust: 100%;
-	-webkit-tap-highlight-color: rgba(33, 36, 41, 0);
+	// -webkit-text-size-adjust: 100%;
+	// -webkit-tap-highlight-color: rgba(33, 36, 41, 0);
 	//margin-right: calc(-1 * (100vw - 100%));
 }
 
 body {
 	// min-width: 320px; 
 	//-webkit-font-smoothing: antialiased;
-	position: relative;
-	overflow-x: hidden; 
+	
 	
 	&.loaded_hiding {
 		@include mt;
@@ -87,11 +86,12 @@ body {
 }
 
 .main-wrapper {
-	overflow-x: hidden!important;
-	display: flex;
-	flex-direction: column;
-	min-width: 0;
-	min-height: 100vh;
+	width: 100%;
+	overflow-x: hidden;
+	// display: flex;
+	// flex-direction: column;
+	// min-width: 0;
+	// min-height: 100vh;
 }
 
 .section {
