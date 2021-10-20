@@ -13,8 +13,8 @@
 	@include media-breakpoint-up(xl){
 		background: transparent;
 	}
+	background: $white;
 	&.fixed{
-		background: $white;
 		background: $white;
 		border-bottom: 1px solid $gray-110;
 		box-shadow: 0 0 10px 0 rgba($dark, .1);

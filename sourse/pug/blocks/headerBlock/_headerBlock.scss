@@ -98,7 +98,9 @@
 			font-weight: 900;
 			line-height: calc(68/64);
 
-			font-size: rem(40);
+			@include media-breakpoint-down(sm){
+			font-size: rem(28);
+			}
 			margin-bottom: rem(25);
 			@include media-breakpoint-up(lg){
 				font-size: rem(64);

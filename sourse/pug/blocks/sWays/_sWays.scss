@@ -13,8 +13,9 @@
 			position: relative;
 			align-items: center;
 			justify-content: space-between;
-		}
 			margin-bottom: rem(100);
+		}
+		margin-bottom: rem(50);
 			img{
 				// position: absolute;
 				@include media-breakpoint-up(xl) {
@@ -114,4 +115,7 @@
 	@include media-breakpoint-between(md, xl) {}
 	@include media-breakpoint-only(xl) {}
 	@include media-breakpoint-down(xl) {}
+	@include media-breakpoint-down(md) {
+		--sPB: 0;
+	}
 } // end.sWays

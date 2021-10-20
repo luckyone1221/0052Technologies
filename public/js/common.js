@@ -157,9 +157,17 @@ function eventHandler() {
 	JSCCommon.inputMask();
 
 
-
-	//
 	let topNav = document.querySelector('.top-nav  ');
+
+	function setFixedClass() {
+		if (window.scrollY > 0) {
+			topNav.classList.add('fixed');
+		}
+		else {
+			topNav.classList.remove('fixed');
+		}
+	}
+	//
 	if (topNav) {
 		window.addEventListener('scroll', setFixedClass, { passive: true });
 		window.addEventListener('resize', setFixedClass, { passive: true });
@@ -168,14 +176,6 @@ function eventHandler() {
 		window.setTimeout(function () {
 			setFixedClass();
 		}, 100);
-	}
-	function setFixedClass() {
-		if (window.scrollY > 0) {
-			topNav.classList.add('fixed');
-		}
-		else {
-			topNav.classList.remove('fixed');
-		}
 	}
 	// modal window
 
