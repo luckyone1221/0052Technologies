@@ -1,12 +1,13 @@
+- let ver = '?ver=1.0.0'
 mixin allcss()
 	//- link(rel="stylesheet", href="libs/Easy-Responsive-Tab-Accordion-Control-Plugin-For-jQuery/easy-responsive-tabs.css")
 	//- link(href="libs/swiper/css/swiper.min.css", rel="stylesheet")
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 	link(href="libs/@fancyapps/ui/fancybox.css", rel="stylesheet")
-	link(rel="stylesheet", href="js/animate.css/animate.min.css")
-	link(rel="stylesheet", href="libs/select2/css/select2.min.css")
-	link(href="css/main.min.css", rel="stylesheet")
+	link(rel="stylesheet", href=`js/animate.css/animate.min.css${ver}`)
+	link(rel="stylesheet", href=`libs/select2/css/select2.min.css${ver}`)
+	link(href=`css/main.min.css${ver}`, rel="stylesheet")
 
 mixin allcjs()
 	//- script(src="js/libs.js")
@@ -14,20 +15,20 @@ mixin allcjs()
 	//- script(src="libs/loading-attribute-polyfill/loading-attribute-polyfill.min.js")
 
 	// modal libs
-	script(src="libs/jquery/jquery.min.js")
-	script(src="libs/@fancyapps/ui/fancybox.umd.js")
+	script(src=`libs/jquery/jquery.min.js${ver}`)
+	script(src=`libs/@fancyapps/ui/fancybox.umd.js${ver}`)
 	// modal libs
 	// slider libs
-	script(src="libs/wowjs/wow.min.js")
-	script(src="libs/swiper/swiper-bundle.min.js") 
-	script(src="libs/select2/js/select2.min.js") 
+	script(src=`libs/wowjs/wow.min.js${ver}`)
+	script(src=`libs/swiper/swiper-bundle.min.js${ver}`) 
+	script(src=`libs/select2/js/select2.min.js${ver}`) 
 	// /slider libs
 
 	//script(src="libs/inputmask/inputmask.min.js")
 	//script(src="js/libs.js")
 
-	script(src="libs/inputmask/inputmask.min.js")
-	script(src="js/common.js")
+	script(src=`libs/inputmask/inputmask.min.js${ver}`)
+	script(src=`js/common.js${ver}`)
 	//- cut text libs
 	//- script(src="libs/jquery.morelines.min.js")
 

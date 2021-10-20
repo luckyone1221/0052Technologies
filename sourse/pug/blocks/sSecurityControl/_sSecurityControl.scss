@@ -16,6 +16,7 @@
 				width: calc(100% - var(--r));
 				margin-bottom: 84px;
 				font-size: rem(20);
+					@include media-breakpoint-up(xl){
 				&::after{
 				content: '';
 				position: absolute;
@@ -28,6 +29,7 @@
 				height: (740px * .5);
 				right: -200px;
 				
+				}
 				}
 				&::before{
 					content: '';
